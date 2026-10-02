@@ -5,7 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // 2. High-Performance Intersection Observer for Fade-ins
+    // 2. Mouse Glow Effect (Ethereal Background Tracker)
+    // Tracks the mouse and updates CSS variables to move the radial gradient glow
+    document.addEventListener("mousemove", (e) => {
+        // We set these variables on the root so .mouse-glow can use them
+        document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+        document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+    });
+
+    // 3. Smooth Fade-in on Scroll
     const fadeElements = document.querySelectorAll('.fade-in');
     
     const observerOptions = {
@@ -24,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fadeElements.forEach(el => fadeObserver.observe(el));
 
-    // 3. Active Nav Highlighting (Top Nav)
+    // 4. Active Nav Highlighting
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-links a');
     
@@ -51,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navObserver.observe(section);
     });
 
-    // 4. Project Filter System
+    // 5. Project Filter System
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -68,14 +76,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 if (filter === 'all' || category === filter) {
                     card.classList.remove('filter-hidden');
-                    // Quick fade animation
+                    // Quick fade and slide up animation
                     card.style.opacity = '0';
-                    card.style.transform = 'translateY(10px)';
+                    card.style.transform = 'translateY(15px) scale(0.98)';
                     requestAnimationFrame(() => {
                         requestAnimationFrame(() => {
-                            card.style.transition = 'all 0.3s ease';
+                            card.style.transition = 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
                             card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
+                            card.style.transform = 'translateY(0) scale(1)';
                         });
                     });
                 } else {
