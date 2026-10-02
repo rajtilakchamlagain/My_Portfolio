@@ -32,6 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fadeElements.forEach(el => fadeObserver.observe(el));
 
+    // Fallback: forcefully show elements after 1.5s just in case the browser observer fails on desktop
+    setTimeout(() => {
+        fadeElements.forEach(el => el.classList.add('visible'));
+    }, 1500);
+
     // 4. Active Nav Highlighting
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-links a');

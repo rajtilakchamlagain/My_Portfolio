@@ -19,6 +19,10 @@
     
     --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'Outfit', sans-serif;
+    
+    /* Default Mouse Positions */
+    --mouse-x: 50vw;
+    --mouse-y: 50vh;
 }
 
 * {
