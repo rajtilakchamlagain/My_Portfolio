@@ -4,7 +4,7 @@
     --text-muted: #666666;
     --border-color: #d8d8d8;
     
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Syne', sans-serif;
     --font-body: 'Inter', sans-serif;
     
     --spacing-sm: 0.5rem;
@@ -57,34 +57,23 @@ a {
 }
 
 /* Custom Cursor */
-.cursor-dot, .cursor-outline {
+.cursor-dot {
     position: fixed;
     top: 0; left: 0;
-    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background-color: white;
     border-radius: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10000;
     pointer-events: none;
+    mix-blend-mode: difference;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.cursor-dot {
-    width: 6px;
-    height: 6px;
-    background-color: var(--text-main);
-}
-
-.cursor-outline {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(20, 20, 20, 0.4);
-    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
-}
-
-.cursor-outline.hovering {
+.cursor-dot.hovering {
     width: 60px;
     height: 60px;
-    background-color: rgba(20, 20, 20, 0.05);
-    border-color: transparent;
-    backdrop-filter: blur(2px);
 }
 
 /* RTC Logo */
@@ -434,7 +423,7 @@ a {
     .name { font-size: 3rem; }
     .skills-container { grid-template-columns: 1fr; gap: 2rem; }
     * { cursor: auto !important; } /* Disable custom cursor on smaller screens */
-    .cursor-dot, .cursor-outline { display: none; }
+    .cursor-dot { display: none; }
     .filter-btn { cursor: pointer !important; }
     .experience-header { flex-direction: column; gap: 0.25rem; }
     .project-header { flex-direction: column; gap: 0.5rem; }

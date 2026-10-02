@@ -7,30 +7,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 2. Custom Cursor Logic (only active on desktop)
     const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
     let mouseX = 0, mouseY = 0;
-    let outlineX = 0, outlineY = 0;
+    let dotX = 0, dotY = 0;
 
-    if (window.innerWidth > 1100 && cursorDot && cursorOutline) {
+    if (window.innerWidth > 1100 && cursorDot) {
         window.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            
-            // Dot follows instantly
-            cursorDot.style.left = `${mouseX}px`;
-            cursorDot.style.top = `${mouseY}px`;
         });
 
         // Smooth outline follow
         function animateCursor() {
-            let dx = mouseX - outlineX;
-            let dy = mouseY - outlineY;
+            let dx = mouseX - dotX;
+            let dy = mouseY - dotY;
             
-            outlineX += dx * 0.15;
-            outlineY += dy * 0.15;
+            dotX += dx * 0.2;
+            dotY += dy * 0.2;
             
-            cursorOutline.style.left = `${outlineX}px`;
-            cursorOutline.style.top = `${outlineY}px`;
+            cursorDot.style.left = `${dotX}px`;
+            cursorDot.style.top = `${dotY}px`;
             
             requestAnimationFrame(animateCursor);
         }
@@ -52,13 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
             elem.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
             
             // Expand cursor
-            if(cursorOutline) cursorOutline.classList.add('hovering');
+            if(cursorDot) cursorDot.classList.add('hovering');
         });
 
         elem.addEventListener('mouseleave', () => {
             if(window.innerWidth <= 1100) return;
             elem.style.transform = 'translate(0px, 0px)';
-            if(cursorOutline) cursorOutline.classList.remove('hovering');
+            if(cursorDot) cursorDot.classList.remove('hovering');
         });
     });
 
@@ -148,10 +143,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Hover effect for cursor
         btn.addEventListener('mouseenter', () => {
-            if(cursorOutline) cursorOutline.classList.add('hovering');
+            if(cursorDot) cursorDot.classList.add('hovering');
         });
         btn.addEventListener('mouseleave', () => {
-            if(cursorOutline) cursorOutline.classList.remove('hovering');
+            if(cursorDot) cursorDot.classList.remove('hovering');
         });
     });
 });
