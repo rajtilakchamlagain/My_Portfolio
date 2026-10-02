@@ -3,420 +3,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajtilak Chamlagain | Portfolio</title>
+    <title>Rajtilak Chamlagain | Software Developer</title>
     <meta name="description" content="Portfolio of Rajtilak Chamlagain, showcasing projects in Machine Learning, Full-Stack Web Development, and Cybersecurity.">
     
-    <!-- RTC Favicon (SVG inline as data URI) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23141414'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='28' font-weight='bold' fill='%23f7f7f5' text-anchor='middle' letter-spacing='-1'%3ERTC%3C/text%3E%3Cline x1='12' y1='50' x2='52' y2='50' stroke='%23f7f7f5' stroke-width='1.5' opacity='0.4'/%3E%3C/svg%3E">
+    <!-- Dev Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230a0a0a'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='32' font-weight='bold' fill='%23ededed' text-anchor='middle'%3E/%3E%3C/text%3E%3C/svg%3E">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Professional Dev Fonts: Inter (UI) + JetBrains Mono (Code/Accents) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="no-scroll">
-    <!-- Custom Cursor -->
-    <div class="cursor-dot"></div>
+<body>
     
-    <!-- Film Grain Noise Overlay -->
-    <div class="noise"></div>
+    <!-- Top Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="mono-accent">~/</span>rajtilak
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="layout-container">
+    <main class="container">
         
-        <aside class="sidebar">
-            <header>
-                <!-- RTC Logo -->
-                <div class="rtc-logo">
-                    <svg viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
-                        <text x="0" y="25" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#141414" letter-spacing="-1">R</text>
-                        <text x="18" y="25" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="400" fill="#141414" font-style="italic" letter-spacing="-1">T</text>
-                        <text x="34" y="25" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#141414" letter-spacing="-1">C</text>
-                        <line x1="0" y1="30" x2="48" y2="30" stroke="#141414" stroke-width="1" opacity="0.3"/>
-                    </svg>
+        <!-- Hero Section -->
+        <section id="hero" class="section fade-in">
+            <div class="hero-content">
+                <p class="greeting mono-accent">Hello, World. I am</p>
+                <h1 class="name">Rajtilak Chamlagain.</h1>
+                <h2 class="role">I engineer intelligent systems & digital experiences.</h2>
+                <p class="bio">
+                    Currently pursuing Computer Science & Engineering at <strong>Barak Valley Engineering College</strong> (2028). 
+                    My expertise lies at the intersection of <span class="highlight">Machine Learning</span>, <span class="highlight">Full-Stack Web Development</span>, and <span class="highlight">Cybersecurity</span>. I focus on building scalable, performant, and clean code solutions.
+                </p>
+                <div class="hero-links">
+                    <a href="https://github.com/rajtilakchamlagain" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/rajtilak-chamlagain-7129942a3" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        LinkedIn
+                    </a>
+                    <a href="mailto:rjtiksrm@gmail.com" class="btn-secondary">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        Email
+                    </a>
                 </div>
+            </div>
+        </section>
 
-                <h1 class="name">
-                    <div class="reveal-mask"><span class="reveal-text">Rajtilak</span></div>
-                    <div class="reveal-mask"><span class="reveal-text italic-serif">Chamlagain.</span></div>
-                </h1>
-                
-                <div class="reveal-mask">
-                    <p class="subtitle reveal-text">Computer Science & Engineering</p>
-                </div>
-                
-                <nav class="navigation">
-                    <ul>
-                        <li><a href="#about" class="active magnetic" data-magnetic>About</a></li>
-                        <li><a href="#projects" class="magnetic" data-magnetic>Projects</a></li>
-                        <li><a href="#skills" class="magnetic" data-magnetic>Skills</a></li>
-                        <li><a href="#experience" class="magnetic" data-magnetic>Experience</a></li>
-                        <li><a href="#leadership" class="magnetic" data-magnetic>Leadership & Volunteer</a></li>
-                    </ul>
-                </nav>
-
-                <div class="contact-info">
-                    <a href="mailto:rjtiksrm@gmail.com" class="contact-link magnetic" data-magnetic>rjtiksrm@gmail.com</a>
-                    <a href="tel:+916002971864" class="contact-link magnetic" data-magnetic>+91 6002971864</a>
-                    
-                    <div class="social-links">
-                        <a href="https://github.com/rajtilakchamlagain" target="_blank" rel="noopener noreferrer" class="magnetic" data-magnetic>GitHub</a>
-                        <a href="https://linkedin.com/in/rajtilak-chamlagain-7129942a3" target="_blank" rel="noopener noreferrer" class="magnetic" data-magnetic>LinkedIn</a>
-                        <a href="https://sahityasanskriti.online" target="_blank" rel="noopener noreferrer" class="magnetic" data-magnetic>Website</a>
-                    </div>
-                    <p class="location">Based in Tezpur, Assam</p>
-                </div>
-            </header>
-        </aside>
-
-        <main class="content">
+        <!-- Projects Section -->
+        <section id="projects" class="section fade-in">
+            <div class="section-header">
+                <h2 class="section-title">01. Projects</h2>
+                <div class="section-line"></div>
+            </div>
             
-            <section id="about" class="section">
-                <div class="reveal-mask">
-                    <h2 class="section-title reveal-text">About Me<span class="dot">.</span></h2>
-                </div>
-                <div class="text-content">
-                    <div class="reveal-mask">
-                        <p class="reveal-text">
-                            I am currently a 5th-semester B.Tech student in Computer Science and Engineering at <strong>Barak Valley Engineering College (BVEC)</strong>, expecting to graduate in 2028. 
-                        </p>
-                    </div>
-                    <div class="reveal-mask">
-                        <p class="reveal-text">
-                            My primary focus lies at the intersection of <span class="italic-serif">Machine Learning</span>, <span class="italic-serif">Full-Stack Web Development</span>, and <span class="italic-serif">Cybersecurity</span>.
-                        </p>
-                    </div>
-                    <div class="reveal-mask">
-                        <p class="reveal-text">
-                            I build end-to-end intelligent systems, from natural language processing pipelines to highly interactive 3D web rendering environments. I believe in writing clean, scalable code and delivering premium digital experiences.
-                        </p>
-                    </div>
-                </div>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai-ml">AI / ML</button>
+                <button class="filter-btn" data-filter="full-stack">Full Stack</button>
+                <button class="filter-btn" data-filter="ui-ux">UI / UX</button>
+            </div>
+
+            <div class="project-grid">
                 
-                <div class="reveal-mask">
-                    <h3 class="subsection-title reveal-text">Education</h3>
-                </div>
-                <ul class="timeline">
-                    <li class="stagger-item">
-                        <span class="timeline-date">2024 &mdash; Expected 2028</span>
-                        <div class="timeline-content">
-                            <strong>Barak Valley Engineering College (BVEC)</strong>
-                            <p>B.Tech in Computer Science and Engineering</p>
+                <!-- AI/ML -->
+                <article class="project-card" data-category="ai-ml">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">AI/ML</span>
+                            <div class="project-links">
+                                <a href="https://github.com/rajtilakchamlagain/ClearSight" target="_blank" title="Source Code"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
                         </div>
-                    </li>
-                    <li class="stagger-item">
-                        <span class="timeline-date">2023</span>
-                        <div class="timeline-content">
-                            <strong>Biswanath Jnan Bharati School</strong>
-                            <p>Class 12</p>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-
-            <section id="projects" class="section">
-                <div class="reveal-mask">
-                    <h2 class="section-title reveal-text">Selected Projects<span class="dot">.</span></h2>
-                </div>
-                
-                <!-- Project Filter Buttons -->
-                <div class="project-filters stagger-item">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="ai-ml">AI / ML</button>
-                    <button class="filter-btn" data-filter="full-stack">Full Stack</button>
-                    <button class="filter-btn" data-filter="ui-ux">UI / UX</button>
-                </div>
-
-                <div class="project-grid">
-                    
-                    <!-- ===== AI/ML PROJECTS ===== -->
-                    
-                    <article class="project-card stagger-item" data-category="ai-ml">
-                        <div class="project-header">
-                            <h3>ClearSight</h3>
-                            <span class="project-tech">Python, Computer Vision, Deep Learning</span>
-                        </div>
-                        <p class="project-desc">AI-powered computer vision forensics pipeline engineered under TIDF, IIT Guwahati. Implemented advanced image processing algorithms to optimize real-time analysis for investigative workflows.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/rajtilakchamlagain/ClearSight" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card stagger-item" data-category="ai-ml">
-                        <div class="project-header">
-                            <h3>BioSync</h3>
-                            <span class="project-tech">DeepFace, Neural Networks, Full-Stack</span>
-                        </div>
-                        <p class="project-desc">A full-stack biometric attendance system utilizing secure QR tokenization and DeepFace neural networks for real-time facial verification and secure authentication.</p>
-                        <div class="project-links">
-                            <a href="https://bio-sync-biometric-attendance.vercel.app" target="_blank" rel="noopener" class="magnetic" data-magnetic>Live Demo</a>
-                            <a href="https://github.com/rajtilakchamlagain/BioSync-Biometric-Attendance" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card stagger-item" data-category="ai-ml">
-                        <div class="project-header">
-                            <h3>IntelliFilter</h3>
-                            <span class="project-tech">Python, ML, NLP</span>
-                        </div>
-                        <p class="project-desc">An end-to-end Natural Language Processing model utilizing Multinomial Naive Bayes to automatically detect and filter spam messages. Developed the entire pipeline including data cleaning and feature engineering.</p>
-                        <div class="project-links">
-                            <a href="https://intellifilter-bvec.streamlit.app" target="_blank" rel="noopener" class="magnetic" data-magnetic>Live Demo</a>
-                            <a href="https://github.com/rajtilakchamlagain/IntelliFilter" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card stagger-item" data-category="ai-ml">
-                        <div class="project-header">
-                            <h3>Digit Recognizer</h3>
-                            <span class="project-tech">Machine Learning, Neural Networks</span>
-                        </div>
-                        <p class="project-desc">An ML model leveraging Neural Networks to accurately recognize and classify handwritten digits from standard datasets.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/rajtilakchamlagain/digit-recognizer-nn" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card stagger-item" data-category="ai-ml">
-                        <div class="project-header">
-                            <h3>AirScript CV</h3>
-                            <span class="project-tech">Computer Vision, OpenCV</span>
-                        </div>
-                        <p class="project-desc">A computer vision application for air-writing recognition, enabling users to write in the air using hand gestures captured through a camera.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/rajtilakchamlagain/AirScript-CV" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                    <!-- ===== FULL-STACK PROJECTS ===== -->
-
-                    <article class="project-card stagger-item" data-category="full-stack">
-                        <div class="project-header">
-                            <h3>HomelyHub</h3>
-                            <span class="project-tech">MERN Stack, RESTful APIs</span>
-                        </div>
-                        <p class="project-desc">A full-stack property booking platform built with MongoDB, Express.js, React, and Node.js. Features RESTful APIs, state management, and responsive frontend design.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/rajtilakchamlagain/HomelyHub" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card stagger-item" data-category="full-stack">
-                        <div class="project-header">
-                            <h3>PitchBid</h3>
-                            <span class="project-tech">JavaScript, Full-Stack</span>
-                        </div>
-                        <p class="project-desc">A startup pitch and bidding platform enabling entrepreneurs to showcase ideas and receive investment offers in a competitive format.</p>
-                        <div class="project-links">
-                            <a href="https://pitch-bid.vercel.app" target="_blank" rel="noopener" class="magnetic" data-magnetic>Live Demo</a>
-                            <a href="https://github.com/rajtilakchamlagain/PitchBid" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card stagger-item" data-category="full-stack">
-                        <div class="project-header">
-                            <h3>Sahitya Sanskriti Hub</h3>
-                            <span class="project-tech">Full-Stack, Web Analytics</span>
-                        </div>
-                        <p class="project-desc">Built and currently manage a live digital literary and academic portfolio website. Handled continuous code improvements, domain management, and analytic tracking implementation.</p>
-                        <div class="project-links">
-                            <a href="https://sahityasanskriti.online" target="_blank" rel="noopener" class="magnetic" data-magnetic>Live Site</a>
-                            <a href="https://github.com/rajtilakchamlagain/Sahitya-Sanskriti-Hub" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card stagger-item" data-category="full-stack">
-                        <div class="project-header">
-                            <h3>Assam Tourism Portal</h3>
-                            <span class="project-tech">JavaScript, DITEC Project</span>
-                        </div>
-                        <p class="project-desc">An open-source tourism portal developed during the DITEC industrial internship, showcasing Assam's heritage, destinations, and cultural experiences.</p>
-                        <div class="project-links">
-                            <a href="https://assam-tourism-portal-ditecdummy.vercel.app" target="_blank" rel="noopener" class="magnetic" data-magnetic>Live Demo</a>
-                            <a href="https://github.com/rajtilakchamlagain/Assam-Tourism-Portal-DITEC" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card stagger-item" data-category="full-stack">
-                        <div class="project-header">
-                            <h3>Student Admission Portal</h3>
-                            <span class="project-tech">Java, OOP</span>
-                        </div>
-                        <p class="project-desc">A Java desktop application utilizing OOP principles to streamline student enrollment. Features an intuitive GUI and efficient data structures for reliable record management.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/rajtilakchamlagain/STUDENT-ADMISSION-PORTAL" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                    <!-- ===== UI/UX PROJECTS ===== -->
-
-                    <article class="project-card stagger-item" data-category="ui-ux">
-                        <div class="project-header">
-                            <h3>Chessverse</h3>
-                            <span class="project-tech">JavaScript, Interactive Web</span>
-                        </div>
-                        <p class="project-desc">An interactive web-based chess application providing a seamless gameplay experience with elegant UI design and smooth animations.</p>
-                        <div class="project-links">
-                            <a href="https://bvecchess.vercel.app" target="_blank" rel="noopener" class="magnetic" data-magnetic>Live Demo</a>
-                            <a href="https://github.com/rajtilakchamlagain/BVEC_Chess" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card stagger-item" data-category="ui-ux">
-                        <div class="project-header">
-                            <h3>Lunar Registry</h3>
-                            <span class="project-tech">CSS, Front-End Design</span>
-                        </div>
-                        <p class="project-desc">A creative, space-themed web experience for fictional lunar land sales &mdash; showcasing advanced CSS techniques and immersive visual storytelling.</p>
-                        <div class="project-links">
-                            <a href="https://lunar-registry.vercel.app" target="_blank" rel="noopener" class="magnetic" data-magnetic>Live Demo</a>
-                            <a href="https://github.com/rajtilakchamlagain/lunar-registry" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card stagger-item" data-category="ui-ux">
-                        <div class="project-header">
-                            <h3>Interactive 3D Portfolio</h3>
-                            <span class="project-tech">Front-End, 3D Rendering</span>
-                        </div>
-                        <p class="project-desc">Developed a highly interactive, 3D-rendered digital portfolio for senior alumni, demonstrating advanced UI/UX design.</p>
-                        <div class="project-links">
-                            <a href="https://futurist-portfolio-omega.vercel.app" target="_blank" rel="noopener" class="magnetic" data-magnetic>Live Demo</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card stagger-item" data-category="ui-ux">
-                        <div class="project-header">
-                            <h3>EduQuest</h3>
-                            <span class="project-tech">HTML, CSS, JavaScript</span>
-                        </div>
-                        <p class="project-desc">An educational platform interface with engaging design and interactive elements, built with clean HTML/CSS fundamentals.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/rajtilakchamlagain/EduQuest" target="_blank" rel="noopener" class="magnetic" data-magnetic>Source Code</a>
-                        </div>
-                    </article>
-
-                </div>
-            </section>
-
-            <section id="skills" class="section">
-                <div class="reveal-mask">
-                    <h2 class="section-title reveal-text">Technical Skills<span class="dot">.</span></h2>
-                </div>
-                <div class="skills-container">
-                    <div class="skill-category stagger-item">
-                        <h3>Programming</h3>
-                        <p>Python, SQL, HTML, CSS, JavaScript, Java</p>
+                        <h3>ClearSight</h3>
+                        <p>AI-powered computer vision forensics pipeline engineered under TIDF, IIT Guwahati. Implemented advanced image processing algorithms to optimize real-time analysis.</p>
+                        <ul class="project-tech-list mono">
+                            <li>Python</li><li>CV</li><li>Deep Learning</li>
+                        </ul>
                     </div>
-                    <div class="skill-category stagger-item">
-                        <h3>AI & Machine Learning</h3>
-                        <p>Deep Learning, Computer Vision, NLP, OSINT, Data Analytics, Image Processing</p>
-                    </div>
-                    <div class="skill-category stagger-item">
-                        <h3>Frameworks & Tools</h3>
-                        <p>React, Node.js, Express, MongoDB, OpenCV, Figma (UI/UX), Vercel, Git</p>
-                    </div>
-                    <div class="skill-category stagger-item">
-                        <h3>Specializations</h3>
-                        <p>Cybersecurity, 3D Web Rendering, RESTful APIs, Web Analytics Tracking, DevOps</p>
-                    </div>
-                </div>
-            </section>
+                </article>
 
-            <section id="experience" class="section">
-                <div class="reveal-mask">
-                    <h2 class="section-title reveal-text">Experience & Internships<span class="dot">.</span></h2>
-                </div>
-
-                <div class="experience-item stagger-item">
-                    <div class="experience-header">
-                        <h3>Summer Research Intern</h3>
-                        <span class="experience-date">June 2026 &mdash; July 2026</span>
+                <article class="project-card" data-category="ai-ml">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">AI/ML</span>
+                            <div class="project-links">
+                                <a href="https://bio-sync-biometric-attendance.vercel.app" target="_blank" title="Live Demo"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                <a href="https://github.com/rajtilakchamlagain/BioSync-Biometric-Attendance" target="_blank" title="Source Code"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3>BioSync</h3>
+                        <p>A full-stack biometric attendance system utilizing secure QR tokenization and DeepFace neural networks for real-time facial verification.</p>
+                        <ul class="project-tech-list mono">
+                            <li>DeepFace</li><li>Neural Networks</li><li>Full-Stack</li>
+                        </ul>
                     </div>
-                    <p class="experience-org">Technology Innovation Hub (TIDF), IIT Guwahati &mdash; Guwahati, Assam</p>
-                    <ul>
-                        <li>Applied advanced Deep Learning and image processing techniques to solve complex forensic challenges.</li>
-                        <li>Collaborated closely with leading researchers to optimize neural network architectures for real-time analysis.</li>
-                    </ul>
-                </div>
+                </article>
 
-                <div class="experience-item stagger-item">
-                    <div class="experience-header">
-                        <h3>MERN Stack Intern</h3>
-                        <span class="experience-date">Aug 2026 &mdash; Sep 2026</span>
+                <article class="project-card" data-category="ai-ml">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">AI/ML</span>
+                            <div class="project-links">
+                                <a href="https://intellifilter-bvec.streamlit.app" target="_blank" title="Live Demo"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                <a href="https://github.com/rajtilakchamlagain/IntelliFilter" target="_blank" title="Source Code"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3>IntelliFilter</h3>
+                        <p>End-to-end NLP model utilizing Multinomial Naive Bayes to automatically detect and filter spam messages, including data cleaning and feature engineering pipelines.</p>
+                        <ul class="project-tech-list mono">
+                            <li>Python</li><li>NLP</li><li>Scikit-Learn</li>
+                        </ul>
                     </div>
-                    <p class="experience-org">Emertxe Information Technologies &mdash; Online</p>
-                    <ul>
-                        <li>Engineered HomelyHub, a full-stack property booking platform utilizing MongoDB, Express.js, React, and Node.js.</li>
-                        <li>Demonstrated practical implementation of RESTful APIs, state management, and responsive frontend design.</li>
-                    </ul>
-                </div>
+                </article>
 
-                <div class="experience-item stagger-item">
-                    <div class="experience-header">
-                        <h3>Industrial Intern</h3>
-                        <span class="experience-date">Completed Aug 2026</span>
+                <article class="project-card" data-category="ai-ml">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">AI/ML</span>
+                            <div class="project-links">
+                                <a href="https://github.com/rajtilakchamlagain/digit-recognizer-nn" target="_blank" title="Source Code"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3>Digit Recognizer</h3>
+                        <p>Machine learning model leveraging Neural Networks to accurately recognize and classify handwritten digits from standard datasets.</p>
+                        <ul class="project-tech-list mono">
+                            <li>Python</li><li>Neural Networks</li>
+                        </ul>
                     </div>
-                    <p class="experience-org">Directorate of Information Technology (DITEC), Govt. of Assam</p>
-                    <ul>
-                        <li>Engaged in practical implementation of tech-driven governance solutions and high-level data analytics.</li>
-                        <li>Developed data tracking metrics to assist in governmental decision-making processes and IT infrastructure.</li>
-                    </ul>
-                </div>
-            </section>
+                </article>
 
-            <section id="leadership" class="section">
-                <div class="reveal-mask">
-                    <h2 class="section-title reveal-text">Leadership & Volunteer<span class="dot">.</span></h2>
-                </div>
-                
-                <div class="experience-item stagger-item">
-                    <div class="experience-header">
-                        <h3>Secretary, BVEC Chess Club</h3>
-                        <span class="experience-date">2025 &mdash; Present</span>
+                <article class="project-card" data-category="ai-ml">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">AI/ML</span>
+                            <div class="project-links">
+                                <a href="https://github.com/rajtilakchamlagain/AirScript-CV" target="_blank" title="Source Code"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3>AirScript CV</h3>
+                        <p>Computer vision application for air-writing recognition, enabling users to write in the air using hand gestures captured through a camera feed.</p>
+                        <ul class="project-tech-list mono">
+                            <li>OpenCV</li><li>Python</li><li>Vision</li>
+                        </ul>
                     </div>
-                    <p class="experience-org">Barak Valley Engineering College</p>
-                    <ul>
-                        <li>Organize college-level tournaments, manage operations, and maintain a competitive FIDE profile.</li>
-                    </ul>
-                </div>
+                </article>
 
-                <div class="experience-item stagger-item">
-                    <div class="experience-header">
-                        <h3>Social Media Head & Core Member</h3>
-                        <span class="experience-date">2025 &mdash; Present</span>
+                <!-- Full Stack -->
+                <article class="project-card" data-category="full-stack">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">Full-Stack</span>
+                            <div class="project-links">
+                                <a href="https://github.com/rajtilakchamlagain/HomelyHub" target="_blank" title="Source Code"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3>HomelyHub</h3>
+                        <p>A full-stack property booking platform utilizing RESTful APIs, modern state management, and responsive frontend architecture.</p>
+                        <ul class="project-tech-list mono">
+                            <li>MongoDB</li><li>Express</li><li>React</li><li>Node.js</li>
+                        </ul>
                     </div>
-                    <p class="experience-org">Swargam (College Music Club)</p>
-                    <p>Manage official social media presence, coordinate club activities, and lead design initiatives.</p>
-                </div>
+                </article>
 
-                <div class="experience-item stagger-item">
-                    <div class="experience-header">
-                        <h3>Official Graphic Designer</h3>
-                        <span class="experience-date">2026</span>
+                <article class="project-card" data-category="full-stack">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">Full-Stack</span>
+                            <div class="project-links">
+                                <a href="https://pitch-bid.vercel.app" target="_blank" title="Live Demo"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                <a href="https://github.com/rajtilakchamlagain/PitchBid" target="_blank" title="Source Code"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3>PitchBid</h3>
+                        <p>A startup pitch and bidding platform enabling entrepreneurs to showcase ideas and receive investment offers in a competitive digital format.</p>
+                        <ul class="project-tech-list mono">
+                            <li>JavaScript</li><li>Next.js</li><li>APIs</li>
+                        </ul>
                     </div>
-                    <p class="experience-org">BVEC College Magazine</p>
-                    <p>Spearhead the visual layout, digital aesthetics, and official design formatting for the annual college magazine.</p>
-                </div>
+                </article>
 
-                <div class="experience-item stagger-item">
-                    <div class="experience-header">
-                        <h3>Social Intern</h3>
-                        <span class="experience-date">July 2024</span>
+                <article class="project-card" data-category="full-stack">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">Full-Stack</span>
+                            <div class="project-links">
+                                <a href="https://sahityasanskriti.online" target="_blank" title="Live Demo"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                <a href="https://github.com/rajtilakchamlagain/Sahitya-Sanskriti-Hub" target="_blank" title="Source Code"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3>Sahitya Sanskriti Hub</h3>
+                        <p>Live digital literary and academic portfolio website. Handled continuous deployment, code improvements, domain management, and analytic tracking.</p>
+                        <ul class="project-tech-list mono">
+                            <li>JavaScript</li><li>Analytics</li><li>Deployment</li>
+                        </ul>
                     </div>
-                    <p class="experience-org">Mother Old Age Home &mdash; Hatigaon, Guwahati</p>
-                    <ul>
-                        <li>Dedicated time to support and assist elderly residents lacking familial support; organized daily activities.</li>
-                    </ul>
-                </div>
-            </section>
+                </article>
+
+                <article class="project-card" data-category="full-stack">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">Full-Stack</span>
+                            <div class="project-links">
+                                <a href="https://assam-tourism-portal-ditecdummy.vercel.app" target="_blank" title="Live Demo"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                <a href="https://github.com/rajtilakchamlagain/Assam-Tourism-Portal-DITEC" target="_blank" title="Source Code"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3>Assam Tourism Portal</h3>
+                        <p>Open-source tourism platform developed during the DITEC industrial internship, showcasing Assam's heritage, destinations, and culture.</p>
+                        <ul class="project-tech-list mono">
+                            <li>JavaScript</li><li>Web App</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="full-stack">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">Software</span>
+                            <div class="project-links">
+                                <a href="https://github.com/rajtilakchamlagain/STUDENT-ADMISSION-PORTAL" target="_blank" title="Source Code"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3>Admission Portal</h3>
+                        <p>Java desktop application utilizing OOP principles to streamline student enrollment. Features an intuitive GUI and reliable record management.</p>
+                        <ul class="project-tech-list mono">
+                            <li>Java</li><li>OOP</li><li>Desktop App</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- UI/UX -->
+                <article class="project-card" data-category="ui-ux">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">UI/UX</span>
+                            <div class="project-links">
+                                <a href="https://bvecchess.vercel.app" target="_blank" title="Live Demo"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                <a href="https://github.com/rajtilakchamlagain/BVEC_Chess" target="_blank" title="Source Code"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3>Chessverse</h3>
+                        <p>Interactive web-based chess application focusing on seamless gameplay mechanics, elegant UI design, and smooth user interactions.</p>
+                        <ul class="project-tech-list mono">
+                            <li>JavaScript</li><li>CSS Animations</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="ui-ux">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">UI/UX</span>
+                            <div class="project-links">
+                                <a href="https://lunar-registry.vercel.app" target="_blank" title="Live Demo"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                <a href="https://github.com/rajtilakchamlagain/lunar-registry" target="_blank" title="Source Code"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3>Lunar Registry</h3>
+                        <p>A creative, space-themed web experience showcasing advanced CSS layout techniques and immersive visual storytelling.</p>
+                        <ul class="project-tech-list mono">
+                            <li>CSS3</li><li>Responsive Design</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="ui-ux">
+                    <div class="project-content">
+                        <div class="project-top">
+                            <span class="project-category mono">UI/UX</span>
+                            <div class="project-links">
+                                <a href="https://futurist-portfolio-omega.vercel.app" target="_blank" title="Live Demo"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            </div>
+                        </div>
+                        <h3>Interactive 3D Portfolio</h3>
+                        <p>Developed a highly interactive, 3D-rendered digital portfolio environment demonstrating advanced frontend rendering capabilities.</p>
+                        <ul class="project-tech-list mono">
+                            <li>3D Rendering</li><li>Front-End</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section fade-in">
+            <div class="section-header">
+                <h2 class="section-title">02. Technologies</h2>
+                <div class="section-line"></div>
+            </div>
             
-            <footer class="footer stagger-item">
-                <p>&copy; <span id="year"></span> Rajtilak Chamlagain. Handcrafted with precision.</p>
-            </footer>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3 class="mono-accent">Languages</h3>
+                    <ul class="skill-list">
+                        <li>Python</li><li>JavaScript (ES6+)</li><li>Java</li><li>SQL</li><li>HTML5 / CSS3</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3 class="mono-accent">AI & Data</h3>
+                    <ul class="skill-list">
+                        <li>Machine Learning</li><li>Deep Learning</li><li>Computer Vision</li><li>NLP</li><li>Data Analytics</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3 class="mono-accent">Frameworks</h3>
+                    <ul class="skill-list">
+                        <li>React.js</li><li>Node.js / Express</li><li>OpenCV</li><li>MongoDB</li><li>Vercel</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        </main>
-    </div>
+        <!-- Experience & Leadership Section -->
+        <section id="experience" class="section fade-in">
+            <div class="section-header">
+                <h2 class="section-title">03. Experience</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-date mono">Jun 2026 &mdash; Jul 2026</div>
+                    <div class="timeline-content">
+                        <h3>Summer Research Intern <span>@ TIDF, IIT Guwahati</span></h3>
+                        <p>Applied advanced Deep Learning and image processing techniques to solve complex forensic challenges. Collaborated to optimize neural network architectures for real-time analysis.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date mono">Aug 2026 &mdash; Sep 2026</div>
+                    <div class="timeline-content">
+                        <h3>MERN Stack Intern <span>@ Emertxe</span></h3>
+                        <p>Engineered HomelyHub, a full-stack property platform utilizing MongoDB, Express, React, and Node. Implemented secure RESTful APIs and modern state management.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date mono">Completed Aug 2026</div>
+                    <div class="timeline-content">
+                        <h3>Industrial Intern <span>@ DITEC, Govt. of Assam</span></h3>
+                        <p>Engaged in practical implementation of tech-driven governance solutions. Developed data tracking metrics to assist in governmental IT infrastructure decisions.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date mono">2025 &mdash; Present</div>
+                    <div class="timeline-content">
+                        <h3>Leadership & Extracurriculars</h3>
+                        <ul class="clean-list">
+                            <li><strong>Secretary, BVEC Chess Club:</strong> Organize college tournaments and maintain competitive FIDE profile.</li>
+                            <li><strong>Social Media Head, Swargam:</strong> Manage digital presence and coordinate club activities.</li>
+                            <li><strong>Graphic Designer:</strong> Spearheaded visual layout for the annual college magazine (2026).</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="footer fade-in">
+            <p class="mono">Designed & Built by Rajtilak Chamlagain</p>
+            <p class="mono muted">&copy; <span id="year"></span> &mdash; All Rights Reserved.</p>
+        </footer>
+
+    </main>
 
     <script src="script.js"></script>
 </body>
