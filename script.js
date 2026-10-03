@@ -378,3 +378,48 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+// Phase 3: Design Gallery Function (global scope so onclick works)
+window.openDesignGallery = function() {
+    const designs = [
+        { src: 'assets/design/techflare_invitation.png', title: 'TechFlare Invitation', desc: 'Official invitation design for TechFlare 2026, the annual college tech fest at BVEC.' },
+        { src: 'assets/design/cover.png', title: 'Cover — College Magazine', desc: 'Cover page design for the BVEC Annual Magazine 2026.' },
+        { src: 'assets/design/the_game.png', title: 'The Game', desc: 'Magazine feature spread design — bold and dynamic sports-themed layout.' },
+        { src: 'assets/design/the_people.png', title: 'The People', desc: 'Magazine editorial layout celebrating the people behind the scenes at BVEC.' },
+        { src: 'assets/design/the_finish.png', title: 'The Finish', desc: 'Magazine closing feature spread — a high-impact visual conclusion.' },
+        { src: 'assets/design/five.png', title: 'Visual Spread', desc: 'Special graphic layout for the college annual magazine 2026.' },
+    ];
+
+    let current = 0;
+
+    function buildGallery(idx) {
+        const d = designs[idx];
+        return `
+            <div class="design-gallery">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                    <h2 class="gradient-text" style="font-size:1.8rem; font-family:var(--font-heading); margin:0;">Graphic Design Work</h2>
+                    <span style="font-size:0.9rem; color:var(--text-muted);">${idx + 1} / ${designs.length}</span>
+                </div>
+                <div style="position:relative; border-radius:16px; overflow:hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.2);">
+                    <img src="${d.src}" alt="${d.title}" style="width:100%; display:block; border-radius:16px;">
+                </div>
+                <div style="margin-top:1.5rem;">
+                    <h3 style="font-size:1.3rem; margin-bottom:0.4rem; font-family:var(--font-heading);">${d.title}</h3>
+                    <p style="color:var(--text-muted); line-height:1.6;">${d.desc}</p>
+                </div>
+                <div style="display:flex; gap:1rem; margin-top:1.5rem; justify-content:center;">
+                    <button onclick="galleryNav(-1)" class="glass-btn" style="padding:0.7rem 1.8rem; font-size:0.95rem;" ${idx === 0 ? 'disabled style="opacity:0.4;padding:0.7rem 1.8rem;font-size:0.95rem;"' : ''}>← Prev</button>
+                    <button onclick="galleryNav(1)"  class="glass-btn primary" style="padding:0.7rem 1.8rem; font-size:0.95rem;" ${idx === designs.length - 1 ? 'disabled style="opacity:0.4;padding:0.7rem 1.8rem;font-size:0.95rem;"' : ''}>Next →</button>
+                </div>
+            </div>
+        `;
+    }
+
+    window.galleryNav = function(dir) {
+        current = Math.max(0, Math.min(designs.length - 1, current + dir));
+        const modalContent = document.getElementById('modal-content');
+        if (modalContent) modalContent.innerHTML = buildGallery(current);
+    };
+
+    window.openModal(buildGallery(0));
+};
