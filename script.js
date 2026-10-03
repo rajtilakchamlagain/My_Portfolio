@@ -423,3 +423,41 @@ window.openDesignGallery = function() {
 
     window.openModal(buildGallery(0));
 };
+
+// Phase 4: Hamburger Drawer Logic
+(function() {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const drawer       = document.getElementById('achievements-drawer');
+    const overlay      = document.getElementById('drawer-overlay');
+    const closeBtn     = document.getElementById('drawer-close');
+
+    function openDrawer() {
+        drawer.classList.add('open');
+        overlay.classList.add('active');
+        document.body.classList.add('modal-open');
+    }
+    function closeDrawer() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.classList.remove('modal-open');
+    }
+
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openDrawer);
+    if (closeBtn)     closeBtn.addEventListener('click', closeDrawer);
+    if (overlay)      overlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+})();
+
+// Open a certificate in the main modal from the drawer
+window.openCert = function(src, title, desc) {
+    const html = `
+        <div class="modal-project">
+            <h2 class="gradient-text" style="font-size:1.9rem;margin-bottom:0.3rem;font-family:var(--font-heading);">${title}</h2>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;font-size:0.9rem;">${desc}</p>
+            <img src="${src}" alt="${title}" style="width:100%;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.15);border:1px solid rgba(255,255,255,0.3);">
+        </div>`;
+    // Close the drawer first, then open modal
+    document.getElementById('achievements-drawer').classList.remove('open');
+    document.getElementById('drawer-overlay').classList.remove('active');
+    setTimeout(() => window.openModal(html), 200);
+};

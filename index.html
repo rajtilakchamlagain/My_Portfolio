@@ -32,6 +32,13 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
             </ul>
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Open Achievements" title="Achievements & Certificates">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
         </div>
     </nav>
 
@@ -376,6 +383,66 @@
         </footer>
 
     </main>
+
+    <!-- Achievements & Certificates Drawer -->
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+    <aside id="achievements-drawer" class="achievements-drawer glass-panel">
+        <div class="drawer-header">
+            <h2 class="gradient-text">Achievements</h2>
+            <p class="drawer-subtitle">Competitions, Certifications & Recognitions</p>
+            <button id="drawer-close" class="drawer-close-btn" aria-label="Close">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <div class="drawer-section-title">♟️ Chess Competitions</div>
+        <div class="cert-grid">
+            <div class="cert-card glass-panel" onclick="openCert('assets/certs/chess_fide_school_2023.jpeg', 'All India Open FIDE Rating School Chess Tournament 2023', 'Participated in the national-level FIDE School Chess Tournament at Indira Gandhi Athletic Stadium, Guwahati. Organised by All Assam Chess Association. Nov 2023.')">
+                <div class="cert-icon">🏆</div>
+                <div class="cert-info"><h4>All India Open FIDE School Chess</h4><p>Nov 2023 · Guwahati</p></div>
+            </div>
+            <div class="cert-card glass-panel" onclick="openCert('assets/certs/chess_downtown_rapid_2023.jpeg', 'Down Town School Rapid Chess Tournament 2023', 'Participated in the TDTS Rapid Chess Tournament at The Down Town School, Chandrapur, Guwahati. Scored 5.0 out of 6 rounds. Nov 2023.')">
+                <div class="cert-icon">⚡</div>
+                <div class="cert-info"><h4>Down Town School Rapid Chess</h4><p>Nov 2023 · Guwahati</p></div>
+            </div>
+            <div class="cert-card glass-panel" onclick="openCert('assets/certs/chess_debendra_46th_2023.jpeg', '46th All Assam Inter District (U-19) FIDE Rating Chess 2023', 'Participated in the Debendra Nath Sarma Memorial 46th All Assam Inter District U-19 FIDE Rating Chess Championship at South Point School, Guwahati. Aug 2023.')">
+                <div class="cert-icon">🎖️</div>
+                <div class="cert-info"><h4>46th All Assam U-19 FIDE Chess</h4><p>Aug 2023 · Guwahati</p></div>
+            </div>
+            <div class="cert-card glass-panel" onclick="openCert('assets/certs/chess_ayodhana_intl_2023.jpeg', '5th Ayodhana International FIDE Rating Chess Tournament 2023', 'Certificate of Merit for participating in the 5th Ayodhana International FIDE Rating Chess Tournament held at Assam Downtown University, Panikhaiti, Guwahati. July 2023.')">
+                <div class="cert-icon">🌐</div>
+                <div class="cert-info"><h4>5th Ayodhana International FIDE Chess</h4><p>July 2023 · Guwahati</p></div>
+            </div>
+            <div class="cert-card glass-panel" onclick="openCert('assets/certs/chess_tezpur_rapid_2026.jpeg', 'Tezpur All Assam Open Rapid Chess Tournament 2026', 'Certificate of Proficiency for scoring 4.5 points in the Tezpur All Assam Open Rapid Chess Tournament, organised by Sonitpur District Chess Association & Sonitpur Chess Academy. Feb 2026.')">
+                <div class="cert-icon">🥇</div>
+                <div class="cert-info"><h4>Tezpur All Assam Open Rapid Chess</h4><p>Feb 2026 · Tezpur</p></div>
+            </div>
+            <div class="cert-card glass-panel" onclick="openCert('assets/certs/chess_guwahati_smart_city_2024.jpeg', '1st Guwahati Smart City International Open FIDE Rating Chess 2024', 'Merit Certificate for participating in the 1st Guwahati Smart City International Open FIDE Rating Chess Tournament, organised by All Assam Chess Association, supported by Govt. of Assam. July 2024.')">
+                <div class="cert-icon">🏙️</div>
+                <div class="cert-info"><h4>Guwahati Smart City Intl FIDE Chess</h4><p>July 2024 · Guwahati</p></div>
+            </div>
+        </div>
+
+        <div class="drawer-section-title">📜 National Certifications</div>
+        <div class="cert-grid">
+            <div class="cert-card glass-panel" onclick="openCert('assets/certs/ncc_equiz_2020.jpeg', 'NCC E-Quiz 2020 — National Level', 'Completed the National Level NCC E-Quiz 2020 on NCC - An Introduction, scoring 100%, organised by Government Arts College, Salem. Sept 2020.')">
+                <div class="cert-icon">💯</div>
+                <div class="cert-info"><h4>NCC E-Quiz 2020 (100% Score)</h4><p>National Level · 2020</p></div>
+            </div>
+            <div class="cert-card glass-panel" onclick="openCert('assets/certs/ncc_covid_quiz_2020.jpeg', 'NCC Covid-19 National Online Quiz', 'Successfully completed the NCC National Level Online Quiz on Covid-19 (Corona Virus), organised by Lal Bahadur College, Army Wing, NCC. Scored 100%. July 2020.')">
+                <div class="cert-icon">🛡️</div>
+                <div class="cert-info"><h4>NCC Covid-19 Online Quiz (100%)</h4><p>National Level · 2020</p></div>
+            </div>
+            <div class="cert-card glass-panel" onclick="openCert('assets/certs/aatmanirbhar_bharat_quiz.jpeg', 'Aatmanirbhar Bharat Swatantra Bharat Quiz', 'Certificate of Participation from the Ministry of Defence & MyGov for successfully completing the Aatmanirbhar Bharat — Swatantra Bharat Quiz.')">
+                <div class="cert-icon">🇮🇳</div>
+                <div class="cert-info"><h4>Aatmanirbhar Bharat Quiz</h4><p>Ministry of Defence · MyGov</p></div>
+            </div>
+            <div class="cert-card glass-panel" onclick="openCert('assets/certs/yoga_patanjali_2021.jpeg', '21 Days Online Yoga Training Camp', 'Certificate of Participation for active participation and successful clearance of the online assessment of the 21 Days Online Yoga Training Camp, organised by Hamro Swabhiman Trust (Patanjali Yogpeeth). Apr–May 2021.')">
+                <div class="cert-icon">🧘</div>
+                <div class="cert-info"><h4>21 Days Yoga Training Camp</h4><p>Patanjali Yogpeeth · 2021</p></div>
+            </div>
+        </div>
+    </aside>
 
     <!-- Premium Glassmorphism Modal -->
     <div id="premium-modal" class="modal-overlay">
