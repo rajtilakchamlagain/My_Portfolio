@@ -97,4 +97,45 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+
+    // 6. Premium Modal Architecture
+    const modalOverlay = document.getElementById('premium-modal');
+    const modalClose = document.querySelector('.modal-close');
+    const modalContent = document.getElementById('modal-content');
+
+    window.openModal = function(contentHTML) {
+        if(modalContent && contentHTML) {
+            modalContent.innerHTML = contentHTML;
+        }
+        if(modalOverlay) {
+            modalOverlay.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+    };
+
+    window.closeModal = function() {
+        if(modalOverlay) {
+            modalOverlay.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+    };
+
+    if (modalClose) {
+        modalClose.addEventListener('click', window.closeModal);
+    }
+
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                window.closeModal();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+            window.closeModal();
+        }
+    });
+
 });
