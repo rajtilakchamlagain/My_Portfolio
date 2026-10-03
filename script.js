@@ -334,6 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `,
         'mobile-ui-prototyping': `
             <div class="modal-project">
+                <img src="assets/projects/figma_ui.jpeg" alt="Figma UI Design" style="width: 100%; border-radius: 16px; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.3);">
                 <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Mobile UI Prototyping</h2>
                 <h3 style="color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 500;">Figma UX Engineering</h3>
                 <p style="margin-bottom: 1.5rem; line-height: 1.7;">A demonstration of my ability to design beautiful, user-centric mobile applications before writing a single line of code. Features a high-fidelity interactive prototype demonstrating layout, color theory, and user flows.</p>
