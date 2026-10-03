@@ -200,14 +200,170 @@ document.addEventListener("DOMContentLoaded", () => {
                     <a href="https://github.com/rajtilakchamlagain/IntelliFilter" target="_blank" class="glass-btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Source Code</a>
                 </div>
             </div>
+        },
+        'digit-recognizer': `
+            <div class="modal-project">
+                <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Digit Recognizer</h2>
+                <h3 style="color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 500;">Handwritten Number Classification</h3>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7;">A machine learning model leveraging advanced Convolutional Neural Networks (CNNs) to accurately recognize and classify handwritten digits in real-time. Trained on the standard MNIST dataset with high validation accuracy.</p>
+                <div style="background: rgba(255,255,255,0.4); padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.6);">
+                    <h4 style="margin-bottom: 0.8rem; font-family: var(--font-heading);">Architecture</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-main); font-weight: 600;">Python / TensorFlow / Keras / OpenCV</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://github.com/rajtilakchamlagain/digit-recognizer-nn" target="_blank" class="glass-btn primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Source Code</a>
+                </div>
+            </div>
+        `,
+        'airscript-cv': `
+            <div class="modal-project">
+                <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">AirScript CV</h2>
+                <h3 style="color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 500;">Gesture-Based Air Writing Recognition</h3>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7;">An interactive computer vision application that tracks hand gestures via webcam, allowing users to draw and write text "in the air." Uses advanced contour detection and finger tracking algorithms.</p>
+                <div style="background: rgba(255,255,255,0.4); padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.6);">
+                    <h4 style="margin-bottom: 0.8rem; font-family: var(--font-heading);">Technology</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-main); font-weight: 600;">OpenCV / Python / MediaPipe</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://github.com/rajtilakchamlagain/AirScript-CV" target="_blank" class="glass-btn primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Source Code</a>
+                </div>
+            </div>
+        `,
+        'homelyhub': `
+            <div class="modal-project">
+                <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">HomelyHub</h2>
+                <h3 style="color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 500;">Full-Stack Property Booking Platform</h3>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7;">A comprehensive real estate and property booking platform built during my MERN stack internship. Features secure user authentication, interactive property maps, and a seamless booking checkout flow.</p>
+                <div style="background: rgba(255,255,255,0.4); padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.6);">
+                    <h4 style="margin-bottom: 0.8rem; font-family: var(--font-heading);">The Stack</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-main); font-weight: 600;">MongoDB / Express.js / React.js / Node.js / REST APIs</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://github.com/rajtilakchamlagain/HomelyHub" target="_blank" class="glass-btn primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Source Code</a>
+                </div>
+            </div>
+        `,
+        'pitchbid': `
+            <div class="modal-project">
+                <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">PitchBid</h2>
+                <h3 style="color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 500;">Startup Investment & Bidding Platform</h3>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7;">A dynamic digital arena connecting entrepreneurs with investors. Founders can upload their pitch decks, and investors can place real-time bids on equity offers.</p>
+                <div style="background: rgba(255,255,255,0.4); padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.6);">
+                    <h4 style="margin-bottom: 0.8rem; font-family: var(--font-heading);">Frontend Architecture</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-main); font-weight: 600;">Next.js / Server-Side Rendering / Tailwind CSS</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://pitch-bid.vercel.app" target="_blank" class="glass-btn primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Live Demo</a>
+                    <a href="https://github.com/rajtilakchamlagain/PitchBid" target="_blank" class="glass-btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Source Code</a>
+                </div>
+            </div>
+        `,
+        'sahitya-sanskriti-hub': `
+            <div class="modal-project">
+                <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Sahitya Sanskriti Hub</h2>
+                <h3 style="color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 500;">Digital Literary Portfolio</h3>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7;">A live digital academic portfolio website focusing on literary and cultural publications. Engineered for high SEO performance, fast load times, and responsive content delivery across all devices.</p>
+                <div style="background: rgba(255,255,255,0.4); padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.6);">
+                    <h4 style="margin-bottom: 0.8rem; font-family: var(--font-heading);">Infrastructure</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-main); font-weight: 600;">Vanilla JS / Custom Domain Management / Analytics / Vercel CI/CD</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://sahityasanskriti.online" target="_blank" class="glass-btn primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Live Demo</a>
+                    <a href="https://github.com/rajtilakchamlagain/Sahitya-Sanskriti-Hub" target="_blank" class="glass-btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Source Code</a>
+                </div>
+            </div>
+        `,
+        'assam-tourism-portal': `
+            <div class="modal-project">
+                <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Assam Tourism Portal</h2>
+                <h3 style="color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 500;">DITEC Government Internship Project</h3>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7;">Developed during my industrial internship with DITEC, Govt. of Assam. An open-source, highly responsive tourism platform showcasing Assam's rich heritage, interactive destination maps, and cultural data.</p>
+                <div style="background: rgba(255,255,255,0.4); padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.6);">
+                    <h4 style="margin-bottom: 0.8rem; font-family: var(--font-heading);">Tech Stack</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-main); font-weight: 600;">JavaScript / Web APIs / Government IT Infrastructure UI</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://assam-tourism-portal-ditecdummy.vercel.app" target="_blank" class="glass-btn primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Live Demo</a>
+                    <a href="https://github.com/rajtilakchamlagain/Assam-Tourism-Portal-DITEC" target="_blank" class="glass-btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Source Code</a>
+                </div>
+            </div>
+        `,
+        'chessverse': `
+            <div class="modal-project">
+                <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Chessverse</h2>
+                <h3 style="color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 500;">Interactive Web-Based Chess Client</h3>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7;">A beautifully designed, highly interactive web chess application. Features flawless drag-and-drop mechanics, move validation, and elegant UI design inspired by premium gaming platforms.</p>
+                <div style="background: rgba(255,255,255,0.4); padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.6);">
+                    <h4 style="margin-bottom: 0.8rem; font-family: var(--font-heading);">UI/UX Highlights</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-main); font-weight: 600;">CSS3 Animations / Advanced JavaScript DOM Manipulation / Game Logic</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://bvecchess.vercel.app" target="_blank" class="glass-btn primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Live Demo</a>
+                    <a href="https://github.com/rajtilakchamlagain/BVEC_Chess" target="_blank" class="glass-btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Source Code</a>
+                </div>
+            </div>
+        `,
+        'lunar-registry': `
+            <div class="modal-project">
+                <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Lunar Registry</h2>
+                <h3 style="color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 500;">Creative Space-Themed Web Experience</h3>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7;">A highly creative frontend challenge showcasing advanced layout techniques. Users navigate through an immersive, cosmic visual story regarding lunar property ownership.</p>
+                <div style="background: rgba(255,255,255,0.4); padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.6);">
+                    <h4 style="margin-bottom: 0.8rem; font-family: var(--font-heading);">Visual Architecture</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-main); font-weight: 600;">Parallax Scrolling / CSS Variables / Responsive Grid Systems</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://lunar-registry.vercel.app" target="_blank" class="glass-btn primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Live Demo</a>
+                    <a href="https://github.com/rajtilakchamlagain/lunar-registry" target="_blank" class="glass-btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Source Code</a>
+                </div>
+            </div>
+        `,
+        'interactive-3d-portfolio': `
+            <div class="modal-project">
+                <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Interactive 3D Portfolio</h2>
+                <h3 style="color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 500;">WebGL Immersive Web App</h3>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7;">An experimental digital environment pushing the boundaries of frontend engineering. Utilizes 3D rendering directly in the browser to create a memorable, interactive spatial UI.</p>
+                <div style="background: rgba(255,255,255,0.4); padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.6);">
+                    <h4 style="margin-bottom: 0.8rem; font-family: var(--font-heading);">Render Engine</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-main); font-weight: 600;">Three.js / WebGL / React Three Fiber / Camera Physics</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://futurist-portfolio-omega.vercel.app" target="_blank" class="glass-btn primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Live Demo</a>
+                </div>
+            </div>
+        `,
+        'mobile-ui-prototyping': `
+            <div class="modal-project">
+                <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Mobile UI Prototyping</h2>
+                <h3 style="color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 500;">Figma UX Engineering</h3>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7;">A demonstration of my ability to design beautiful, user-centric mobile applications before writing a single line of code. Features a high-fidelity interactive prototype demonstrating layout, color theory, and user flows.</p>
+                <div style="background: rgba(255,255,255,0.4); padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.6);">
+                    <h4 style="margin-bottom: 0.8rem; font-family: var(--font-heading);">Design Tools</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-main); font-weight: 600;">Figma / Auto-Layout / Component Systems / Wireframing</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://www.figma.com/design/uxboXxBzN7NRS5A6O2GoPb/Untitled?node-id=0-1&t=53GaVrIKPuzdxbqt-1" target="_blank" class="glass-btn primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">View Prototype in Figma</a>
+                </div>
+            </div>
         `
     };
 
-    // Attach click events to project cards
+    // Attach click events to all project cards dynamically
     document.querySelectorAll('.project-card').forEach(card => {
+        // Auto-generate ID from title if missing (ensures ALL projects work without touching HTML)
+        let projectId = card.getAttribute('data-project-id');
+        if (!projectId) {
+            const title = card.querySelector('h3').textContent;
+            projectId = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            card.setAttribute('data-project-id', projectId);
+        }
+        
+        // Add styling dynamically
+        card.style.cursor = 'pointer';
+        card.setAttribute('title', 'Click for deep dive');
+
         card.addEventListener('click', () => {
-            const projectId = card.getAttribute('data-project-id');
-            if (projectId && projectDetails[projectId]) {
+            if (projectDetails[projectId]) {
                 window.openModal(projectDetails[projectId]);
             }
         });
