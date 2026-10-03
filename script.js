@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <a href="https://github.com/rajtilakchamlagain/IntelliFilter" target="_blank" class="glass-btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Source Code</a>
                 </div>
             </div>
-        },
+        `,
         'digit-recognizer': `
             <div class="modal-project">
                 <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Digit Recognizer</h2>
