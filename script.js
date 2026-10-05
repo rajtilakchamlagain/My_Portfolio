@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = 'RajTilakChamlagain123';
         
         // Fetch Stats
-        fetch(https://api.chess.com/pub/player//stats)
+        fetch(`https://api.chess.com/pub/player/${username}/stats`)
             .then(res => res.json())
             .then(data => {
                 const rapid = data.chess_rapid?.last?.rating || 'N/A';
@@ -476,14 +476,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('chess-rapid').innerText = rapid;
                 document.getElementById('chess-blitz').innerText = blitz;
                 document.getElementById('chess-username').innerText = username;
-                document.getElementById('chess-status').innerText = 'Live Rating Active ??';
+                document.getElementById('chess-status').innerText = 'Live Rating Active 🟢';
             })
             .catch(err => {
                 document.getElementById('chess-status').innerText = 'Unable to load stats';
             });
             
         // Fetch Profile for Avatar
-        fetch(https://api.chess.com/pub/player/)
+        fetch(`https://api.chess.com/pub/player/${username}`)
             .then(res => res.json())
             .then(data => {
                 if (data.avatar) {
