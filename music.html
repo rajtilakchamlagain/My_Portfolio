@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajtilak Chamlagain | Classical Music</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF9A9E'/%3E%3Cstop offset='100%25' stop-color='%23FECFEF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='sans-serif' font-size='26' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3ERTC%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero { padding: 120px 2rem 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .page-hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .page-hero p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; }
+        .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-main); background: rgba(255,255,255,0.1); padding: 0.75rem 1.5rem; border-radius: 30px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
+        .back-btn:hover { background: rgba(255,255,255,0.3); transform: translateX(-5px); }
+        .timeline { max-width: 800px; margin: 0 auto; padding: 2rem; position: relative; }
+        .timeline::before { content: ''; position: absolute; left: 40px; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.2); }
+        .timeline-item { position: relative; padding-left: 60px; margin-bottom: 3rem; }
+        .timeline-dot { position: absolute; left: 33px; top: 5px; width: 16px; height: 16px; border-radius: 50%; background: linear-gradient(135deg, #FF9A9E, #FECFEF); border: 4px solid #fff; box-shadow: 0 0 0 4px rgba(255,255,255,0.2); }
+        .cert-card-large { display: flex; align-items: center; gap: 1.5rem; padding: 1.5rem; border-radius: 16px; margin-top: 1rem; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .cert-card-large:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); background: rgba(255,255,255,0.2); }
+        .cert-card-large img { width: 80px; height: 80px; object-fit: cover; border-radius: 12px; }
+        .cert-card-large h4 { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.25rem; }
+        @media(max-width: 768px) { .timeline::before { left: 20px; } .timeline-item { padding-left: 40px; } .timeline-dot { left: 13px; } .cert-card-large { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+<body>
+    <div class="aurora-bg"></div>
+    <div class="mouse-glow"></div>
+    <div class="noise-overlay"></div>
+
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <a href="index.html" class="logo gradient-text">RTC.</a>
+            <a href="index.html" class="back-btn">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <h1 class="gradient-text">Classical Music</h1>
+            <p>My journey in classical singing, achieving the prestigious Vocal Visharad.</p>
+        </section>
+
+        <section class="timeline">
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem;">Classical Training</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Dedicated years to mastering classical vocal music, undergoing rigorous riyaz and theoretical study of ragas and talas.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem;">Vocal Visharad</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Successfully achieved the Vocal Visharad qualification, marking a significant milestone in Indian classical music education.</p>
+                
+                <div class="cert-card-large" onclick="openCert('assets/certs/visharad_cert.jpg', 'Visharad Certificate', 'Classical Singing')">
+                    <img src="assets/certs/visharad_cert.jpg" alt="Music">
+                    <div><h4>Visharad Certificate</h4><p style="color: var(--text-muted); font-size: 0.9rem;">Classical Vocal</p></div>
+                </div>
+                
+                <div class="cert-card-large" onclick="openCert('assets/certs/vocal_visharad_cert.jpg', 'Vocal Visharad Final Year', 'Classical Singing')">
+                    <img src="assets/certs/vocal_visharad_cert.jpg" alt="Music">
+                    <div><h4>Vocal Visharad Final Year</h4><p style="color: var(--text-muted); font-size: 0.9rem;">Classical Vocal</p></div>
+                </div>
+            </div>
+        
+        </section>
+    </main>
+
+    <!-- Modal for viewing certificates -->
+    <div id="premium-modal" class="modal-overlay">
+        <div class="modal-container glass-panel">
+            <button id="modal-close" class="modal-close-btn">&times;</button>
+            <div id="modal-content" class="modal-content-area"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

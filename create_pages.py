@@ -232,11 +232,7 @@ pages = {
 }
 
 for filename, data in pages.items():
-    html_content = base_html_template.format(
-        title=data['title'],
-        description=data['description'],
-        timeline_content=data['content']
-    )
+    html_content = base_html_template.replace('{title}', data['title']).replace('{description}', data['description']).replace('{timeline_content}', data['content'])
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(html_content)
     print(f"Created {filename}")
