@@ -46,7 +46,10 @@
         
         <!-- Hero Section -->
         <section id="hero" class="section fade-in">
-            <div class="hero-content glass-panel">
+            <div class="hero-content glass-panel" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <div style="width: 140px; height: 140px; border-radius: 50%; padding: 4px; background: linear-gradient(135deg, #FF9A9E, #FECFEF); margin-bottom: 1.5rem; box-shadow: 0 10px 30px rgba(255, 154, 158, 0.3);">
+                    <img src="assets/profile.jpeg" alt="Rajtilak Chamlagain" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid white;" />
+                </div>
                 <div class="hero-badge">Welcome to the future</div>
                 <h1 class="name">I'm <span class="gradient-text">Rajtilak</span><br>Chamlagain.</h1>
                 <h2 class="role">Engineering intelligent systems & digital experiences.</h2>
@@ -470,6 +473,20 @@
         </div>
     </div>
 
+    <!-- Micro Interactions: 3D Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script>
+        // Initialize 3D tilt on desktop only
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            VanillaTilt.init(document.querySelectorAll(".project-card"), {
+                max: 10,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.2,
+                scale: 1.02
+            });
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
