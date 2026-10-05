@@ -461,3 +461,36 @@ window.openCert = function(src, title, desc) {
     document.getElementById('drawer-overlay').classList.remove('active');
     setTimeout(() => window.openModal(html), 200);
 };
+// CHESS.COM API INTEGRATION
+document.addEventListener('DOMContentLoaded', () => {
+    const chessCard = document.getElementById('chess-stats-card');
+    if (chessCard) {
+        const username = 'RajTilakChamlagain123';
+        
+        // Fetch Stats
+        fetch(https://api.chess.com/pub/player//stats)
+            .then(res => res.json())
+            .then(data => {
+                const rapid = data.chess_rapid?.last?.rating || 'N/A';
+                const blitz = data.chess_blitz?.last?.rating || 'N/A';
+                document.getElementById('chess-rapid').innerText = rapid;
+                document.getElementById('chess-blitz').innerText = blitz;
+                document.getElementById('chess-username').innerText = username;
+                document.getElementById('chess-status').innerText = 'Live Rating Active ??';
+            })
+            .catch(err => {
+                document.getElementById('chess-status').innerText = 'Unable to load stats';
+            });
+            
+        // Fetch Profile for Avatar
+        fetch(https://api.chess.com/pub/player/)
+            .then(res => res.json())
+            .then(data => {
+                if (data.avatar) {
+                    const avatarImg = document.getElementById('chess-avatar');
+                    avatarImg.src = data.avatar;
+                    avatarImg.style.display = 'block';
+                }
+            });
+    }
+});

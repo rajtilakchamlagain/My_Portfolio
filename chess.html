@@ -101,6 +101,28 @@
                 <div class="timeline-dot"></div>
                 <h3 style="font-family: var(--font-heading); font-size: 1.5rem;">Live Profile</h3>
                 <p style="color: var(--text-muted); margin-top: 0.5rem;">Follow my live games and ratings on chess.com.</p>
+                
+                <!-- Live Stats Card -->
+                <div id="chess-stats-card" class="cert-card-large" style="cursor: default; flex-direction: column; align-items: flex-start; gap: 0.5rem; margin-top: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; width: 100%;">
+                        <img src="" id="chess-avatar" alt="Avatar" style="width: 60px; height: 60px; border-radius: 50%; display: none;">
+                        <div>
+                            <h4 id="chess-username">Loading Live Stats...</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;" id="chess-status">Fetching from chess.com API...</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; width: 100%; margin-top: 0.5rem;">
+                        <div style="background: rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 12px; flex: 1; text-align: center;">
+                            <div style="font-size: 0.8rem; color: var(--text-muted);">Rapid Rating</div>
+                            <div id="chess-rapid" style="font-size: 1.5rem; font-weight: bold; font-family: var(--font-heading); color: #FF9A9E;">--</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 12px; flex: 1; text-align: center;">
+                            <div style="font-size: 0.8rem; color: var(--text-muted);">Blitz Rating</div>
+                            <div id="chess-blitz" style="font-size: 1.5rem; font-weight: bold; font-family: var(--font-heading); color: #FECFEF;">--</div>
+                        </div>
+                    </div>
+                </div>
+
                 <a href="https://www.chess.com/member/RajTilakChamlagain123" target="_blank" class="back-btn" style="margin-top: 1rem;">View RajTilakChamlagain123 on Chess.com ↗</a>
             </div>
         
