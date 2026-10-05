@@ -135,6 +135,21 @@ pages = {
                 <div class="timeline-dot"></div>
                 <h3 style="font-family: var(--font-heading); font-size: 1.5rem;">NCC Training & Development</h3>
                 <p style="color: var(--text-muted); margin-top: 0.5rem;">Joined the NCC to cultivate leadership and discipline. Participated in various activities, drills, and national awareness programs.</p>
+                
+                <div class="cert-card-large" onclick="openCert('assets/certs/ncc_a_certificate.jpg', 'NCC A Certificate', 'Successfully completed the NCC A Certificate.')">
+                    <img src="assets/certs/ncc_a_certificate.jpg" alt="NCC">
+                    <div><h4>NCC A Certificate</h4><p style="color: var(--text-muted); font-size: 0.9rem;">National Cadet Corps</p></div>
+                </div>
+                
+                <div class="cert-card-large" onclick="openCert('assets/certs/ncc_2019.jpg', 'NCC Camp 2019', 'Participated in NCC Camp in 2019.')">
+                    <img src="assets/certs/ncc_2019.jpg" alt="NCC">
+                    <div><h4>NCC Camp 2019</h4><p style="color: var(--text-muted); font-size: 0.9rem;">National Cadet Corps</p></div>
+                </div>
+                
+                <div class="cert-card-large" onclick="openCert('assets/certs/ncc_2015_certificate.jpg', 'NCC 2015 Participation', 'Early NCC Participation.')">
+                    <img src="assets/certs/ncc_2015_certificate.jpg" alt="NCC">
+                    <div><h4>NCC 2015 Participation</h4><p style="color: var(--text-muted); font-size: 0.9rem;">National Cadet Corps</p></div>
+                </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
@@ -154,6 +169,22 @@ pages = {
                 <div class="cert-card-large" onclick="openCert('assets/certs/aatmanirbhar_bharat_quiz.jpeg', 'Aatmanirbhar Bharat Quiz', 'Ministry of Defence')">
                     <img src="assets/certs/aatmanirbhar_bharat_quiz.jpeg" alt="NCC">
                     <div><h4>Aatmanirbhar Bharat Quiz</h4><p style="color: var(--text-muted); font-size: 0.9rem;">Ministry of Defence & MyGov</p></div>
+                </div>
+            </div>
+        '''
+    },
+    'art.html': {
+        'title': 'Art & Fine Arts',
+        'description': 'Exploring creativity through fine arts and drawing.',
+        'content': '''
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem;">Fine Arts Diploma</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Dedicated practice and training in fine arts and drawing, culminating in a diploma.</p>
+                
+                <div class="cert-card-large" onclick="openCert('assets/certs/diploma.jpg', 'Fine Arts Diploma', 'Diploma in Art/Drawing.')">
+                    <img src="assets/certs/diploma.jpg" alt="Art">
+                    <div><h4>Fine Arts Diploma</h4><p style="color: var(--text-muted); font-size: 0.9rem;">Art & Drawing</p></div>
                 </div>
             </div>
         '''
