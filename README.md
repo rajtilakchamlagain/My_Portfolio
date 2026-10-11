@@ -1,66 +1,107 @@
-# Rajtilak Chamlagain | Portfolio 🚀
+# Rajtilak Chamlagain | Official Engineering Portfolio 🚀
 
-> **Live Demo:** [https://my-portfolio-henna-rho-16.vercel.app/](https://my-portfolio-henna-rho-16.vercel.app/)
+> **Live Production URL:** [https://rajtilak.me](https://rajtilak.me)  
+> **Alternative Mirrors:** [https://rajtilak.live](https://rajtilak.live) • [https://rajtilakchamlagain.tech](https://rajtilakchamlagain.tech) • [https://my-portfolio-henna-rho-16.vercel.app/](https://my-portfolio-henna-rho-16.vercel.app/)
 
-Welcome to the repository for my personal developer portfolio. Designed to set a new standard in web aesthetics, this portfolio blends high-performance code with a breathtaking, highly unique **"Prism OS" (Ethereal Aurora Glass)** aesthetic.
-
----
-
-## 🎨 The Aesthetic: Prism OS
-
-I wanted to move away from the standard dark-mode "developer" portfolios and the generic template looks. Instead, I engineered a highly custom, futuristic, and optimistic design that catches the eye of recruiters and peers alike.
-
-### Key Design Features:
-1. **Ethereal Aurora Background:** A massive, slowly shifting fluid mesh gradient made of stunning pastel colors (peach, soft pinks, baby blues, and lilacs) that resembles a flowing liquid aurora borealis. Achieved purely with CSS `@keyframes` and `linear-gradient` scaling.
-2. **Interactive Mouse Glow Tracker:** A custom JavaScript event listener tracks the user's cursor, projecting a soft, bright radial gradient *behind* the glass cards. It acts as a dynamic flashlight illuminating the beautiful background.
-3. **Pristine Glassmorphism:** Every structural element (navigation, hero section, project cards) is engineered as a frosted glass panel using `backdrop-filter: blur()`. When they float over the colorful background, the colors blur beautifully through the UI.
-4. **Cinematic Typography:** Utilizes **Space Grotesk** for futuristic, high-end geometric headings, paired with **Outfit** for flawless readability in the body text.
-5. **Fluid Animations:** Smooth hover elevations, glass opacity transitions, and Intersection Observer fade-ins ensure the site feels alive and responsive.
+Welcome to the central repository for my personal engineering portfolio. Engineered to set a new benchmark in web aesthetics and performance, this site blends high-performance vanilla engineering with a unique **"Prism OS" (Ethereal Aurora Glass)** design language.
 
 ---
 
-## 🛠️ Tech Stack
+## 🌐 Official Production Domains
 
-This portfolio was built from scratch with zero heavy frameworks, ensuring maximum performance, ultimate customizability, and a deep understanding of core web technologies.
-
-- **HTML5:** Semantic, accessible structure.
-- **CSS3:** Advanced CSS properties including CSS Variables, Flexbox/Grid, `backdrop-filter`, complex `@keyframes` animations, and CSS gradients.
-- **Vanilla JavaScript (ES6+):** Lightweight DOM manipulation, high-performance Intersection Observers for scroll animations, custom cursor tracking, and dynamic project filtering.
-- **Deployment:** Vercel (CI/CD auto-deployments from GitHub).
-
----
-
-## 🚀 Features
-
-- **Dynamic Project Filtering:** Instantly filter projects by domain (AI/ML, Full Stack, UI/UX) with smooth, calculated DOM animations.
-- **Scroll-Triggered Reveals:** Content elegantly fades and slides into place as the user scrolls, keeping the experience engaging.
-- **Fully Responsive Design:** The complex glass layouts perfectly adapt to mobile devices, tablets, and massive desktop monitors without losing the aesthetic feel.
-- **Performance Optimized:** No heavy libraries (like React or Three.js) were used. The glowing effects and background meshes run smoothly on standard device GPUs.
+| Primary Domain | Status | Target / Platform |
+|---|---|---|
+| **[rajtilak.me](https://rajtilak.me)** | 🟢 Primary Active | Vercel Global Edge Network |
+| **[rajtilak.live](https://rajtilak.live)** | 🟢 Mirror / Backup | Vercel Global Edge Network |
+| **[rajtilakchamlagain.tech](https://rajtilakchamlagain.tech)** | 🟢 Tech Showcase | GitHub Student Developer Pack / Vercel |
 
 ---
 
-## 💻 Local Setup
+## 🎨 Design Philosophy: "Prism OS" (Ethereal Aurora Glass)
 
-Since this project uses pure HTML, CSS, and JS, running it locally is incredibly simple.
+Most developer portfolios fall into the dark-mode neon template trope. I engineered **Prism OS** as a breath of fresh air: an optimistic, fluid, ultra-clean aesthetic that reflects precision engineering:
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/rajtilakchamlagain/My_Portfolio.git
-   ```
-2. **Navigate to the directory:**
-   ```bash
-   cd My_Portfolio
-   ```
-3. **Open the project:**
-   Simply open `index.html` in any modern web browser. (Alternatively, use an extension like *Live Server* in VS Code for hot-reloading).
+1. **Ethereal Aurora Background:** A 4-color mesh gradient (`#FF9A9E`, `#FECFEF`, `#a1c4fd`, `#c2e9fb`) dynamically shifting via CSS `@keyframes` and matrix rotations to resemble an undulating liquid aurora borealis.
+2. **Interactive Cursor Tracker:** An interactive mouse tracker projections an expansive radial gradient behind glass surfaces without repainting the entire DOM tree.
+3. **Pristine Glassmorphism:** Layered frosted glass panels (`backdrop-filter: blur(20px)`) with subtle specular highlights, 1px gradient borders, and soft directional drop-shadows.
+4. **Editorial Typography:** Geometric futuristic headers in **Space Grotesk** paired with the ergonomic warmth of **Outfit** for high-density reading.
+5. **Aesthetic Custom Cursor:** A dual-element cursor (responsive glowing gradient dot + inertia-lag trailing ring with frosted blur) featuring automatic hover expansion over interactive targets.
 
 ---
 
-## 👨‍💻 About Me
+## 🛠️ Complete Architecture & Tech Stack
 
-I am currently pursuing a B.Tech in Computer Science & Engineering at **Barak Valley Engineering College** (Expected 2028). My expertise lies at the intersection of **Machine Learning**, **Full-Stack Web Development**, and **Cybersecurity**. I focus on building intelligent systems and digital experiences that are highly performant and beautifully designed.
+Engineered from scratch without heavy framework bloat (Zero React, Zero Three.js, Zero Tailwind), ensuring a 99+ Lighthouse performance score and instant cold boots:
 
-📫 Connect with me on [LinkedIn](https://linkedin.com/in/rajtilak-chamlagain-7129942a3) or check out my other repositories here on GitHub!
+- **HTML5 (Semantic Web):** Accessible sectioning, Open Graph metadata, native SVG iconography, and responsive media tags.
+- **Advanced CSS3:** Custom CSS variables, Flexbox & CSS Grid, GPU-accelerated 3D transforms (`translateZ(0)`), `backdrop-filter`, and CSS scroll-snap.
+- **Modern JavaScript (ES6+ Modules & APIs):**
+  - **Intersection Observer API:** Staggered scroll-triggered item reveals (`stagger-1` through `stagger-4`).
+  - **Live Chess.com API:** Fetches real-time FIDE & Chess.com Blitz/Rapid stats for `RajTilakChamlagain123`.
+  - **Interactive GitHub Contribution Calendar:** Live responsive calendar powered by `github-calendar.js`.
+  - **Asynchronous Web3Forms:** AJAX-based contact form submission with zero-refresh client validation and mailto fallbacks.
+  - **Client-Side Guestbook:** Local storage buffered feedback board with XSS sanitization.
+- **Continuous Integration / Continuous Deployment:** Vercel automated CI/CD pipeline triggered on every commit to `master`.
 
 ---
-*Designed & Engineered by Rajtilak Chamlagain.*
+
+## 🚀 Key Feature Breakdown
+
+### 1. Dynamic Project Filtering System
+- Instant categorisation (`All`, `AI & ML`, `Full Stack`, `UI / UX`, `Graphic Design`).
+- Real-time badge count computation (`<span class="filter-count">`) dynamically counting rendered items.
+- Dynamic "Showing X projects" counter with staggered entrance animations (40ms per-card stagger).
+
+### 2. Live Platform Integrations
+- **Live Chess.com Statistics:** Dynamically queries `https://api.chess.com/pub/player/RajTilakChamlagain123/stats` and displays live Rapid & Blitz ratings, user avatars, and active presence.
+- **Interactive GitHub Calendar:** Real-time hoverable contribution tiles replacing static images.
+- **Curated Spotify Player:** Embedded player allowing visitors to play and stream study/focus soundtracks directly inside the portfolio.
+
+### 3. Native App-Style Mobile Overhaul (iOS Bottom Sheet Experience)
+- **Floating Pill Nav:** Floating tab bar fixed to the thumb zone on mobile screens.
+- **Horizontal Swipe Carousel:** CSS scroll-snap (`scroll-snap-type: x mandatory`) for effortless single-hand project browsing.
+- **Bottom-Sheet Navigation Drawer:** Hamburger menu slides smoothly from bottom-to-top on phones with frosted background dimming.
+- **Tactile Touch Feedback:** Micro-contraction (`scale(0.97)`) on touch devices for tactile physical response.
+- **System Theme Sync:** `<meta name="theme-color" content="#FFF5F7">` blends browser chrome into the aurora background.
+
+### 4. Interactive Multipage Sub-Hubs
+Built with seamless exit/entry transitions without white screen flashes:
+- **Chess Career (`chess.html`):** Tournament history, FIDE ID 88176894, verified certificates, and live stats.
+- **NCC Journey (`ncc.html`):** National Cadet Corps A-Certificate achievements and National Defence Quiz distinctions.
+- **Classical Music & Yoga (`music.html`):** Vocal Visharad achievements from Bhatkhande Sangit Vidyapith, Patanjali Yoga Camp certification, and embedded Spotify playlist.
+- **Academics (`academics.html`):** CBSE Class 10 & 12 credentials, B.Tech CSE coursework roadmap.
+
+### 5. Community & Connectivity
+- **Direct Contact Channel:** Contact card with Web3Forms integration sending emails straight to `rjtiksrm@gmail.com`.
+- **Digital Guestbook:** Live interactive visitor board allowing peers and recruiters to leave public testimonials.
+
+---
+
+## 💻 Local Development
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/rajtilakchamlagain/My_Portfolio.git
+
+# 2. Enter project folder
+cd My_Portfolio
+
+# 3. Launch with any HTTP server (e.g. Python, VS Code Live Server)
+python -m http.server 8000
+```
+
+Open `http://localhost:8000` in your browser.
+
+---
+
+## 👨‍💻 Engineering Identity
+
+**Rajtilak Chamlagain**  
+*Computer Science & Engineering Student @ Barak Valley Engineering College (2028)*  
+- **Email:** [rjtiksrm@gmail.com](mailto:rjtiksrm@gmail.com)  
+- **LinkedIn:** [linkedin.com/in/rajtilak-chamlagain-7129942a3](https://linkedin.com/in/rajtilak-chamlagain-7129942a3)  
+- **GitHub:** [@rajtilakchamlagain](https://github.com/rajtilakchamlagain)  
+- **Chess.com:** [RajTilakChamlagain123](https://www.chess.com/member/RajTilakChamlagain123)
+
+---
+*Architected & Maintained by Rajtilak Chamlagain.*

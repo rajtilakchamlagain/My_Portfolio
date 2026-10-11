@@ -1386,6 +1386,19 @@ body.modal-open {
     .timeline-item { padding-left: 1.5rem; margin-bottom: 2.5rem; }
     .timeline-item::before { left: -7px; }
 
+    /* 📱 CONTACT & GUESTBOOK MOBILE */
+    .contact-card, .guestbook-container { padding: 1.6rem 1.2rem; border-radius: 22px; }
+    .form-row { grid-template-columns: 1fr; gap: 1rem; }
+    .guestbook-inputs { flex-direction: column; }
+    .guestbook-inputs input, .gb-submit-btn { width: 100%; min-width: 0; }
+    .guestbook-wall-grid { grid-template-columns: 1fr; max-height: 320px; }
+
+    /* 📱 TACTILE TOUCH FEEDBACK (Micro-contraction on active tap) */
+    .glass-btn:active, .project-card:active, .drawer-nav-card:active, .cert-card-large:active, .filter-btn:active {
+        transform: scale(0.97) !important;
+        transition: transform 0.1s ease !important;
+    }
+
     /* Footer */
     .footer { padding-bottom: 6rem; margin-top: 3rem; }
 }
