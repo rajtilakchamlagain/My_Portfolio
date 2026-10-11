@@ -90,11 +90,12 @@
             </div>
             
             <div class="project-filters glass-panel">
-                <button class="filter-btn active" data-filter="all">All Visions</button>
-                <button class="filter-btn" data-filter="ai-ml">AI & ML</button>
-                <button class="filter-btn" data-filter="full-stack">Full Stack</button>
-                <button class="filter-btn" data-filter="ui-ux">UI / UX</button>
-                <button class="filter-btn" data-filter="design">Graphic Design</button>
+                <button class="filter-btn active" data-filter="all">All Visions <span class="filter-count" id="count-all">0</span></button>
+                <button class="filter-btn" data-filter="ai-ml">AI & ML <span class="filter-count" id="count-ai-ml">0</span></button>
+                <button class="filter-btn" data-filter="full-stack">Full Stack <span class="filter-count" id="count-full-stack">0</span></button>
+                <button class="filter-btn" data-filter="ui-ux">UI / UX <span class="filter-count" id="count-ui-ux">0</span></button>
+                <button class="filter-btn" data-filter="design">Graphic Design <span class="filter-count" id="count-design">0</span></button>
+                <span class="project-count-label" id="projects-showing-label">Showing <span id="visible-count">0</span> projects</span>
             </div>
 
             <div class="project-grid">
@@ -329,11 +330,16 @@
                 <h2 class="section-title gradient-text">Open Source Activity</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="glass-panel" style="padding: 2rem; border-radius: 24px; text-align: center; overflow-x: auto;">
-                <img src="https://ghchart.rshah.org/FF9A9E/rajtilakchamlagain" alt="Rajtilak's Github chart" style="width: 100%; min-width: 600px; max-width: 800px; opacity: 0.9;" />
+            <div class="glass-panel" style="padding: 2rem; border-radius: 24px;">
+                <!-- Interactive GitHub Contribution Calendar -->
+                <div id="github-calendar-container" class="github-calendar-wrapper">
+                    <div style="text-align:center; color: var(--text-muted); padding: 1.5rem; font-size: 0.9rem;">Loading interactive contribution calendar...</div>
+                </div>
+                <div id="github-calendar-tooltip" class="github-calendar-tooltip"></div>
+                <!-- Stats Cards -->
                 <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-                    <img src="https://github-readme-stats.vercel.app/api?username=rajtilakchamlagain&theme=transparent&hide_border=true&title_color=FF9A9E&text_color=ffffff&icon_color=FECFEF&show_icons=true" alt="GitHub Stats" style="height: 150px; background: rgba(255,255,255,0.05); border-radius: 16px; padding: 0.5rem;" />
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rajtilakchamlagain&theme=transparent&hide_border=true&title_color=FF9A9E&text_color=ffffff&layout=compact" alt="Top Languages" style="height: 150px; background: rgba(255,255,255,0.05); border-radius: 16px; padding: 0.5rem;" />
+                    <img src="https://github-readme-stats.vercel.app/api?username=rajtilakchamlagain&theme=transparent&hide_border=true&title_color=FF9A9E&text_color=555555&icon_color=FECFEF&show_icons=true" alt="GitHub Stats" style="height: 150px; background: rgba(255,255,255,0.4); border-radius: 16px; padding: 0.5rem;" />
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rajtilakchamlagain&theme=transparent&hide_border=true&title_color=FF9A9E&text_color=555555&layout=compact" alt="Top Languages" style="height: 150px; background: rgba(255,255,255,0.4); border-radius: 16px; padding: 0.5rem;" />
                 </div>
             </div>
         </section>
@@ -478,6 +484,9 @@
             });
         }
     </script>
+    <!-- Interactive GitHub Calendar -->
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
