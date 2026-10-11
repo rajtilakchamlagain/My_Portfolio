@@ -737,6 +737,101 @@ h1, h2, h3, .logo, .hero-badge {
 }
 
 /* =========================================
+   SCROLL-TRIGGERED REVEAL ANIMATIONS (Item-level)
+========================================= */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Delay helpers for staggered children */
+.stagger-1 { transition-delay: 0.05s; }
+.stagger-2 { transition-delay: 0.1s; }
+.stagger-3 { transition-delay: 0.15s; }
+.stagger-4 { transition-delay: 0.2s; }
+
+/* =========================================
+   PAGE TRANSITIONS (Swup / View Transition API)
+========================================= */
+body {
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.page-is-exiting {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+body.page-is-entering {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+/* =========================================
+   AESTHETIC CUSTOM CURSOR (Glowing Dot & Ring)
+========================================= */
+@media (hover: hover) and (pointer: fine) {
+    /* Custom cursor elements */
+    .custom-cursor-dot {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background: linear-gradient(135deg, #FF9A9E, #FECFEF);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease;
+        box-shadow: 0 0 10px rgba(255, 154, 158, 0.8), 0 0 20px rgba(254, 207, 239, 0.5);
+    }
+
+    .custom-cursor-ring {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 34px;
+        height: 34px;
+        border: 1.5px solid rgba(255, 154, 158, 0.55);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transform: translate(-50%, -50%);
+        transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+        background-color: rgba(255, 154, 158, 0.04);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+    }
+
+    /* Hover states for interactive links/buttons */
+    .custom-cursor-ring.cursor-hover {
+        width: 50px;
+        height: 50px;
+        border-color: rgba(255, 154, 158, 0.85);
+        background-color: rgba(254, 207, 239, 0.2);
+    }
+
+    .custom-cursor-dot.cursor-hover {
+        transform: translate(-50%, -50%) scale(1.4);
+    }
+
+    .custom-cursor-ring.cursor-active {
+        width: 28px;
+        height: 28px;
+        background-color: rgba(255, 154, 158, 0.35);
+    }
+}
+
+/* =========================================
    HAMBURGER BUTTON
 ========================================= */
 .hamburger-btn {

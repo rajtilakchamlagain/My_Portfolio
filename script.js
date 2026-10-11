@@ -13,12 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
     });
 
-    // 3. Smooth Fade-in on Scroll
+    // 3. Smooth Fade-in & Item-level Scroll Reveal
     const fadeElements = document.querySelectorAll('.fade-in');
+    const scrollRevealItems = document.querySelectorAll('.project-card, .skill-category, .timeline-item, .cert-card-large, .drawer-nav-card');
     
+    // Add scroll-reveal class dynamically
+    scrollRevealItems.forEach((el, idx) => {
+        el.classList.add('scroll-reveal');
+        el.classList.add(`stagger-${(idx % 4) + 1}`);
+    });
+
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.08,
+        rootMargin: "0px 0px -40px 0px"
     };
 
     const fadeObserver = new IntersectionObserver((entries, observer) => {
@@ -31,11 +38,90 @@ document.addEventListener("DOMContentLoaded", () => {
     }, observerOptions);
 
     fadeElements.forEach(el => fadeObserver.observe(el));
+    scrollRevealItems.forEach(el => fadeObserver.observe(el));
 
-    // Fallback: forcefully show elements after 1.5s just in case the browser observer fails on desktop
+    // Fallback: forcefully show elements after 1.5s just in case
     setTimeout(() => {
         fadeElements.forEach(el => el.classList.add('visible'));
+        scrollRevealItems.forEach(el => el.classList.add('visible'));
     }, 1500);
+
+    // ============================================================
+    // 3B. AESTHETIC CUSTOM CURSOR (Glowing Dot & Follower Ring)
+    // ============================================================
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        let dot = document.querySelector('.custom-cursor-dot');
+        let ring = document.querySelector('.custom-cursor-ring');
+
+        if (!dot) {
+            dot = document.createElement('div');
+            dot.className = 'custom-cursor-dot';
+            document.body.appendChild(dot);
+        }
+        if (!ring) {
+            ring = document.createElement('div');
+            ring.className = 'custom-cursor-ring';
+            document.body.appendChild(ring);
+        }
+
+        let mouseX = -100, mouseY = -100;
+        let ringX = -100, ringY = -100;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            dot.style.left = `${mouseX}px`;
+            dot.style.top = `${mouseY}px`;
+        });
+
+        // Smooth trailing animation for the ring
+        const animateCursorRing = () => {
+            ringX += (mouseX - ringX) * 0.18;
+            ringY += (mouseY - ringY) * 0.18;
+            ring.style.left = `${ringX}px`;
+            ring.style.top = `${ringY}px`;
+            requestAnimationFrame(animateCursorRing);
+        };
+        requestAnimationFrame(animateCursorRing);
+
+        // Hover scale effects on interactive elements
+        const hoverTargets = document.querySelectorAll('a, button, .project-card, .cert-card-large, .drawer-nav-card, input, [onclick]');
+        hoverTargets.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                ring.classList.add('cursor-hover');
+                dot.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                ring.classList.remove('cursor-hover');
+                dot.classList.remove('cursor-hover');
+            });
+        });
+
+        document.addEventListener('mousedown', () => ring.classList.add('cursor-active'));
+        document.addEventListener('mouseup', () => ring.classList.remove('cursor-active'));
+    }
+
+    // ============================================================
+    // 3C. SEAMLESS PAGE TRANSITIONS (Smooth fade & slide exit/enter)
+    // ============================================================
+    // Handle entry
+    document.body.classList.remove('page-is-exiting');
+
+    // Intercept internal page navigation links for smooth native-app feel
+    const pageNavLinks = document.querySelectorAll('a[href$=".html"], a[href="index.html"]');
+    pageNavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (!href || href.startsWith('http') || href.startsWith('#') || link.target === '_blank') return;
+
+            e.preventDefault();
+            document.body.classList.add('page-is-exiting');
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 220); // Sync with CSS transition
+        });
+    });
 
     // 4. Active Nav Highlighting
     const sections = document.querySelectorAll('.section');
