@@ -696,3 +696,163 @@ document.addEventListener('DOMContentLoaded', () => {
         renderSpotifyCard(null);
     }
 });
+
+
+// ============================================================
+// CONTACT FORM (#8) & DIGITAL GUESTBOOK (#10)
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+    // --- 8. Contact Form Handling ---
+    const contactForm = document.getElementById('contact-form');
+    const contactStatus = document.getElementById('contact-status');
+    const contactSubmitBtn = document.getElementById('contact-submit-btn');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitSpan = contactSubmitBtn ? contactSubmitBtn.querySelector('span') : null;
+            const originalText = submitSpan ? submitSpan.textContent : 'Send Message';
+            if (submitSpan) submitSpan.textContent = 'Sending...';
+            if (contactSubmitBtn) contactSubmitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+            const accessKey = document.getElementById('web3forms-key')?.value;
+
+            // If user hasn't set custom key yet, provide smooth mailto fallback
+            if (!accessKey || accessKey === 'YOUR_ACCESS_KEY_HERE') {
+                const name = formData.get('name') || '';
+                const email = formData.get('email') || '';
+                const subject = formData.get('custom_subject') || 'Portfolio Inquiry';
+                const message = formData.get('message') || '';
+
+                const mailtoUrl = `mailto:rjtiksrm@gmail.com?subject=${encodeURIComponent(subject + ' - from ' + name)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;
+                window.location.href = mailtoUrl;
+
+                if (contactStatus) {
+                    contactStatus.className = 'contact-status-msg success';
+                    contactStatus.textContent = 'Opening your email client to send to rjtiksrm@gmail.com! 🎉';
+                }
+                if (submitSpan) submitSpan.textContent = originalText;
+                if (contactSubmitBtn) contactSubmitBtn.disabled = false;
+                return;
+            }
+
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    if (contactStatus) {
+                        contactStatus.className = 'contact-status-msg success';
+                        contactStatus.textContent = 'Message sent successfully! I will reply shortly. ✨';
+                    }
+                    contactForm.reset();
+                } else {
+                    throw new Error(data.message || 'Submission failed');
+                }
+            } catch (err) {
+                if (contactStatus) {
+                    contactStatus.className = 'contact-status-msg error';
+                    contactStatus.textContent = 'Unable to send via form. Falling back to direct email...';
+                }
+                // Fallback to mailto
+                const name = formData.get('name') || '';
+                const subject = formData.get('custom_subject') || 'Inquiry';
+                const message = formData.get('message') || '';
+                window.location.href = `mailto:rjtiksrm@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+            } finally {
+                if (submitSpan) submitSpan.textContent = originalText;
+                if (contactSubmitBtn) contactSubmitBtn.disabled = false;
+            }
+        });
+    }
+
+    // --- 10. Digital Guestbook Handling ---
+    const gbForm = document.getElementById('guestbook-form');
+    const gbWall = document.getElementById('guestbook-wall');
+
+    const defaultNotes = [
+        {
+            name: "Aman Barman",
+            message: "Great work on ClearSight and BioSync! The light theme glassmorphism looks very clean 🚀",
+            time: "Just now"
+        },
+        {
+            name: "Chess Club BVEC",
+            message: "FIDE rating 1500+ looking solid, Rajtilak! All the best for upcoming tournaments ♟️",
+            time: "2h ago"
+        },
+        {
+            name: "IITG Labmate",
+            message: "Loved the UI polish! Proud of what you built at TIDF.",
+            time: "Yesterday"
+        }
+    ];
+
+    function getGuestbookEntries() {
+        try {
+            const saved = localStorage.getItem('rtc_guestbook_notes');
+            if (saved) return JSON.parse(saved);
+        } catch (e) {}
+        return defaultNotes;
+    }
+
+    function saveGuestbookEntries(entries) {
+        try {
+            localStorage.setItem('rtc_guestbook_notes', JSON.stringify(entries));
+        } catch (e) {}
+    }
+
+    function renderGuestbook() {
+        if (!gbWall) return;
+        const entries = getGuestbookEntries();
+        gbWall.innerHTML = entries.map(item => `
+            <div class="guestbook-note">
+                <div class="gb-note-header">
+                    <span class="gb-author">${escapeHtml(item.name)}</span>
+                    <span class="gb-time">${escapeHtml(item.time)}</span>
+                </div>
+                <div class="gb-text">${escapeHtml(item.message)}</div>
+            </div>
+        `).join('');
+    }
+
+    function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    if (gbForm) {
+        renderGuestbook();
+        gbForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nameInput = document.getElementById('gb-name');
+            const msgInput = document.getElementById('gb-message');
+
+            const name = nameInput?.value.trim();
+            const msg = msgInput?.value.trim();
+
+            if (!name || !msg) return;
+
+            const entries = getGuestbookEntries();
+            entries.unshift({
+                name: name,
+                message: msg,
+                time: "Just now"
+            });
+
+            // Keep max 20 notes in local buffer
+            if (entries.length > 20) entries.pop();
+
+            saveGuestbookEntries(entries);
+            renderGuestbook();
+
+            gbForm.reset();
+        });
+    }
+});
