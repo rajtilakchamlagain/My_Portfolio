@@ -64,37 +64,56 @@ document.addEventListener("DOMContentLoaded", () => {
         navObserver.observe(section);
     });
 
-    // 5. Project Filter System
+    // 5. Project Filter System — with count badges
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
+    const visibleCountEl = document.getElementById('visible-count');
+
+    // Count cards per category and populate badges
+    const categoryCounts = { all: projectCards.length };
+    projectCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (cat) categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+    });
+    filterButtons.forEach(btn => {
+        const f = btn.getAttribute('data-filter');
+        const countEl = btn.querySelector('.filter-count');
+        if (countEl && categoryCounts[f] !== undefined) {
+            countEl.textContent = categoryCounts[f];
+        }
+    });
+    if (visibleCountEl) visibleCountEl.textContent = projectCards.length;
 
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Update active button
             filterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
             const filter = btn.getAttribute('data-filter');
+            let visibleCount = 0;
 
-            projectCards.forEach(card => {
+            projectCards.forEach((card, i) => {
                 const category = card.getAttribute('data-category');
-                
                 if (filter === 'all' || category === filter) {
                     card.classList.remove('filter-hidden');
-                    // Quick fade and slide up animation
+                    visibleCount++;
+                    // Staggered reveal animation
                     card.style.opacity = '0';
-                    card.style.transform = 'translateY(15px) scale(0.98)';
-                    requestAnimationFrame(() => {
-                        requestAnimationFrame(() => {
-                            card.style.transition = 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0) scale(1)';
-                        });
-                    });
+                    card.style.transform = 'translateY(20px) scale(0.97)';
+                    setTimeout(() => {
+                        card.style.transition = 'all 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0) scale(1)';
+                    }, i * 40);
                 } else {
                     card.classList.add('filter-hidden');
+                    card.style.opacity = '';
+                    card.style.transform = '';
+                    card.style.transition = '';
                 }
             });
+
+            if (visibleCountEl) visibleCountEl.textContent = visibleCount;
         });
     });
 
@@ -492,5 +511,102 @@ document.addEventListener('DOMContentLoaded', () => {
                     avatarImg.style.display = 'block';
                 }
             });
+    }
+});
+
+
+// ============================================================
+// GITHUB INTERACTIVE CALENDAR
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const calContainer = document.getElementById('github-calendar-container');
+    if (!calContainer) return;
+
+    // Use github-calendar library if loaded, else fallback to image
+    if (typeof GitHubCalendar !== 'undefined') {
+        GitHubCalendar('#github-calendar-container', 'rajtilakchamlagain', {
+            responsive: true,
+            tooltips: true,
+            global_stats: false,
+        });
+
+        // Style the calendar to match the aurora palette
+        setTimeout(() => {
+            const style = document.createElement('style');
+            style.textContent = `
+                .js-activity-overview-graph rect[data-level="1"] { fill: #FECFEF !important; }
+                .js-activity-overview-graph rect[data-level="2"] { fill: #FFADB8 !important; }
+                .js-activity-overview-graph rect[data-level="3"] { fill: #FF8A95 !important; }
+                .js-activity-overview-graph rect[data-level="4"] { fill: #FF6B7A !important; }
+                .ContributionCalendar-day[data-level="1"] { fill: #FECFEF !important; }
+                .ContributionCalendar-day[data-level="2"] { fill: #FFADB8 !important; }
+                .ContributionCalendar-day[data-level="3"] { fill: #FF8A95 !important; }
+                .ContributionCalendar-day[data-level="4"] { fill: #FF6B7A !important; }
+                .calendar { font-family: 'Outfit', sans-serif !important; }
+                .calendar-graph { width: 100% !important; }
+            `;
+            document.head.appendChild(style);
+        }, 1500);
+    } else {
+        // Fallback: coloured static image
+        calContainer.innerHTML = `
+            <img src="https://ghchart.rshah.org/FF9A9E/rajtilakchamlagain" 
+                 alt="Rajtilak's GitHub contribution chart" 
+                 style="width:100%;min-width:500px;max-width:800px;opacity:0.9;margin:auto;display:block;" />
+        `;
+    }
+});
+
+// ============================================================
+// SPOTIFY NOW PLAYING — music.html only
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const spotifyContainer = document.getElementById('spotify-now-playing');
+    if (!spotifyContainer) return;
+
+    // We fetch from a public Last.fm API (no auth needed) using scrobble data
+    // OR we use novatorem's spotify-now-playing Vercel endpoint if you set it up.
+    // For now, we render a beautiful static "Offline" card as placeholder,
+    // and if user sets up novatorem endpoint, just replace the URL below.
+    const SPOTIFY_API_URL = ''; // Set to your novatorem vercel endpoint if deployed
+
+    function renderSpotifyCard(data) {
+        const isPlaying = data && data.isPlaying;
+        const trackName = data ? data.title : 'Not Playing';
+        const artistName = data ? data.artist : '';
+        const albumArt = data ? data.albumImageUrl : '';
+        const songUrl = data ? data.songUrl : 'https://open.spotify.com';
+
+        spotifyContainer.innerHTML = `
+            <a href="${songUrl}" target="_blank" rel="noopener" class="spotify-card">
+                ${albumArt
+                    ? `<img src="${albumArt}" class="spotify-album-art" alt="Album Art">`
+                    : `<div class="spotify-album-art-placeholder">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                       </div>`
+                }
+                <div class="spotify-info">
+                    <div class="spotify-now-playing-label ${isPlaying ? 'playing' : 'idle'}">
+                        ${isPlaying
+                            ? `<span class="eq-bars"><span></span><span></span><span></span><span></span></span> Now Playing`
+                            : `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0z"/></svg> Recently Played`
+                        }
+                    </div>
+                    <div class="spotify-track-name">${trackName}</div>
+                    ${artistName ? `<div class="spotify-artist-name">by ${artistName}</div>` : ''}
+                </div>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#1DB954" style="flex-shrink:0;opacity:0.7"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            </a>
+        `;
+    }
+
+    if (SPOTIFY_API_URL) {
+        fetch(SPOTIFY_API_URL)
+            .then(res => res.json())
+            .then(data => renderSpotifyCard(data))
+            .catch(() => renderSpotifyCard(null));
+    } else {
+        // Render a placeholder card linking to Spotify profile
+        renderSpotifyCard(null);
     }
 });
